@@ -5,13 +5,36 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
     public float speed = 5.0f;
-    public int coinCount;
+    public float damage = 1.0f;
+    public float firedamage = 5.0f;
+    public float waterdamage = 3.0f;
+    public float lightdamage = 0.5f;
+    public float winddamage = 2.0f;
+    public float lightningdamage = 1.5f;
+    public float icedamage = 2.0f;
+    public float forrestdamage = 2.0f;
+    public float magicdamage = 1.5f;
+    public float undeaddamage = 0.5f;
+    public float shadowdamage = 3.5f;
+        public int coinCount;
     bool bronzekey = false;
     bool silverkey = false;
     bool goldkey = false;
     bool diamondkey = false;
     bool platinumkey = false;
     bool bosskey = false;
+    bool firemage = false;
+    bool icemage = false;
+    bool watermage = false;
+    bool windmage = false;
+    bool lighteningmage = false;
+    bool forrestmage = false;
+    bool earthmage = false;
+    bool lightmage = false;
+    bool necromancer = false;
+    bool shadowmancer = false;
+    bool magic = false;
+    public string magictype = "normal";
     public GameObject coinText;
     // Use this for initialization
     void OnCollisionEnter2D(Collision2D myCollisionInfo)
@@ -54,15 +77,38 @@ public class playerMove : MonoBehaviour {
         }
         
     }
-// Update is called once per frame
-void Update () {
+    // Update is called once per frame
+    void Update()
+    {
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector2 push = new Vector2(horizontal, vertical);
         gameObject.GetComponent<Rigidbody2D>().velocity = push * speed;
-        if (Input.GetButtonDown = ("Fire1"))
+        if (Input.GetKeyDown(KeyCode.Alpha1))
         {
-            //raycast
+
+            //Debug.Log("uno");
+        }
+
+    }
+public void shoot()
+    {
+          if (magictype == "normal")
+        {       
+
         }
     }
+   public void normal()
+    {
+        //no ability does minimal damage to enemies
+        damage = 1.0f;
+    }
+    public void fire()
+    {
+        //special ability 
+        //fireball 
+        damage = firedamage;
+    }
+
+
 }
