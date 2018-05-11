@@ -4,6 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
+    public Image normalimage;
+    public Image type;
+  public Image magicimage;
+    public Image windimage;
+    public Image forrestimage;
+    public Image undeadimage;
+    public Image earthimage;
+    public Image fireimage;
+    public Image waterimage;
+    public Image iceimage;
+    public Image techimage;
+    public Image lightimage;
+    public Image shadowimage;
     public GameObject magicorb;
     public GameObject wind;
     public GameObject liefball;
@@ -15,6 +28,7 @@ public class playerMove : MonoBehaviour {
     public GameObject techbomb;
     public GameObject lightorb;
     public GameObject shadoworb;
+    public GameObject forceorb;
     private GameObject prefab;
     public float bulletSpeed = 10f;
     public float bulletLifetime = 1.0f;
@@ -26,12 +40,13 @@ public class playerMove : MonoBehaviour {
     public float waterdamage = 3.0f;
     public float lightdamage = 0.5f;
     public float winddamage = 2.0f;
-    public float lightningdamage = 1.5f;
+    public float earthdammage = 2.0f;
     public float icedamage = 2.0f;
     public float forrestdamage = 2.0f;
     public float magicdamage = 1.5f;
     public float undeaddamage = 0.5f;
     public float shadowdamage = 3.5f;
+    public float techdamage = 8.0f;
     public int coinCount;
     bool bronzekey = false;
     bool silverkey = false;
@@ -43,7 +58,6 @@ public class playerMove : MonoBehaviour {
     bool icemage = false;
     bool watermage = false;
     bool windmage = false;
-    bool lighteningmage = false;
     bool forrestmage = false;
     bool earthmage = false;
     bool lightmage = false;
@@ -110,11 +124,51 @@ public class playerMove : MonoBehaviour {
             magictype = ("normal");
             //Debug.Log("uno");
         }
-
-    
-
-    
-    
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            magictype = ("wind");
+            //Debug.Log("wind");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            magictype = ("undead");
+            //Debug.Log("undead");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            magictype = ("earth");
+            //Debug.Log("earth");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            magictype = ("fire");
+            //Debug.Log("fire);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha6))
+        {
+            magictype = ("water");
+            //Debug.Log("water");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha7))
+        {
+            magictype = ("ice");
+            //Debug.Log("ice");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha8))
+        {
+            magictype = ("tech");
+            //Debug.Log("tech");
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha9)   )
+        {
+            magictype = ("light");
+            //Debug.Log("light);
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha0))
+        {
+            magictype = ("shadow");
+            //Debug.Log("shadow");
+        }
         if (Input.GetButtonDown("fire1"))
             {
             var mousePosition = Input.mousePosition;
@@ -130,65 +184,83 @@ public class playerMove : MonoBehaviour {
             timer = 0;
             if (magictype == "wind")
             {
+                type = windimage;
                 prefab = wind;
-                damage = 2;
+                damage = winddamage;
                 //knockback
             }
             
             else if (magictype == "forrest")
             {
+                type = forrestimage;
                 prefab = liefball;
-                damage = 2;
+                damage = forrestdamage;
                 //target is restrained temporarily
             }
             else if (magictype == "undead")
             {
+                type = undeadimage;
                 prefab = acidball;
-                damage = 3;
+                damage = undeaddamage;
                 //when enemy dies it reanimates and fights for you at half health
             }
             else if (magictype == "earth")
             {
+                type = earthimage;
                 prefab = rock;
-                damage = 2;
+                damage = earthdammage;
                 //ground shakes and enemies are stunned
             }
             else if (magictype == "fire")
             {
-
+                type = fireimage;
+                prefab = fireball;
+                damage = firedamage;
             }
             else if (magictype == "water")
             {
-
+                type = waterimage;
+                prefab = waterball;
+                damage = waterdamage;
             }
             else if (magictype == "ice")
             {
-
+                type = iceimage;
+                prefab = icespike;
+                damage = icedamage;
             }
             else if (magictype == "magic")
             {
-
+                type = magicimage;
+                prefab = magicorb;
+                damage = magicdamage;
             }
             else if (magictype == "light")
             {
-
+                type = lightimage;
+                prefab = lightorb;
+                damage = lightdamage;
             }
-            else if (magictype == "light")
-            {
-
-            }
+           
             else if (magictype == "shadow")
             {
-
+                type = shadowimage;
+                prefab = shadoworb;
+                damage = shadowdamage;
             }
             else if (magictype == "tech")
             {
-
+                type = techimage;
+                prefab = techbomb;
+                damage = techdamage;
             }
             else
             {
-                //no special
+                type = normalimage;
+                prefab = forceorb;
                 damage = 1;
+               //no special
+           
             }
         }
     }
