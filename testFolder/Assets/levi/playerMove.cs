@@ -4,19 +4,19 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
-    public Image normalimage;
-    public Image type;
-  public Image magicimage;
-    public Image windimage;
-    public Image forrestimage;
-    public Image undeadimage;
-    public Image earthimage;
-    public Image fireimage;
-    public Image waterimage;
-    public Image iceimage;
-    public Image techimage;
-    public Image lightimage;
-    public Image shadowimage;
+    //ublic Image normalimage;
+    private GameObject type;
+    public GameObject magicimage;
+    public GameObject windimage;
+    public GameObject forrestimage;
+    public GameObject undeadimage;
+    public GameObject earthimage;
+    public GameObject fireimage;
+    public GameObject waterimage;
+    public GameObject iceimage;
+    public GameObject techimage;
+    public GameObject lightimage;
+    public GameObject shadowimage;
     public GameObject magicorb;
     public GameObject wind;
     public GameObject liefball;
@@ -44,8 +44,8 @@ public class playerMove : MonoBehaviour {
     public float icedamage = 2.0f;
     public float forrestdamage = 2.0f;
     public float magicdamage = 1.5f;
-    public float undeaddamage = 0.5f;
-    public float shadowdamage = 3.5f;
+ // public float undeaddamage = 0.5f;
+  public float shadowdamage = 3.5f;
     public float techdamage = 8.0f;
     public int coinCount;
     bool bronzekey = false;
@@ -61,7 +61,7 @@ public class playerMove : MonoBehaviour {
     bool forrestmage = false;
     bool earthmage = false;
     bool lightmage = false;
-    bool necromancer = false;
+ // bool necromancer = false;
     bool shadowmancer = false;
     bool magic = false;
     public string magictype = "normal";
@@ -131,8 +131,8 @@ public class playerMove : MonoBehaviour {
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
-            magictype = ("undead");
-            //Debug.Log("undead");
+            magictype = ("normal");
+            //Debug.Log("normal");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
@@ -197,13 +197,7 @@ public class playerMove : MonoBehaviour {
                 damage = forrestdamage;
                 //target is restrained temporarily
             }
-            else if (magictype == "undead")
-            {
-                type = undeadimage;
-                prefab = acidball;
-                damage = undeaddamage;
-                //when enemy dies it reanimates and fights for you at half health
-            }
+           
             else if (magictype == "earth")
             {
                 type = earthimage;
@@ -254,14 +248,14 @@ public class playerMove : MonoBehaviour {
                 prefab = techbomb;
                 damage = techdamage;
             }
-            else
+           /*lse
             {
                 type = normalimage;
                 prefab = forceorb;
                 damage = 1;
                //no special
            
-            }
+            }  */
         }
     }
 
