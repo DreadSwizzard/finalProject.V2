@@ -4,73 +4,25 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
-    //ublic Image normalimage;
-    private GameObject type;
-    public GameObject magicimage;
-    public GameObject windimage;
-    public GameObject forrestimage;
-    public GameObject undeadimage;
-    public GameObject earthimage;
-    public GameObject fireimage;
-    public GameObject waterimage;
-    public GameObject iceimage;
-    public GameObject techimage;
-    public GameObject lightimage;
-    public GameObject shadowimage;
-    public GameObject magicorb;
-    public GameObject wind;
-    public GameObject liefball;
-    public GameObject acidball;
-    public GameObject rock;
-    public GameObject fireball;
-    public GameObject waterball;
-    public GameObject icespike;
-    public GameObject techbomb;
-    public GameObject lightorb;
-    public GameObject shadoworb;
-    public GameObject forceorb;
-    private GameObject prefab;
-    public float bulletSpeed = 10f;
-    public float bulletLifetime = 1.0f;
-    public float shootDelay = 1.0f;
-    public float timer = 0;
-    public float speed = 5.0f;
-    public float damage = 1.0f;
-    public float firedamage = 5.0f;
-    public float waterdamage = 3.0f;
-    public float lightdamage = 0.5f;
-    public float winddamage = 2.0f;
-    public float earthdammage = 2.0f;
-    public float icedamage = 2.0f;
-    public float forrestdamage = 2.0f;
-    public float magicdamage = 1.5f;
- // public float undeaddamage = 0.5f;
-  public float shadowdamage = 3.5f;
-    public float techdamage = 8.0f;
-    public int coinCount;
-    bool bronzekey = false;
-    bool silverkey = false;
-    bool goldkey = false;
-    bool diamondkey = false;
-    bool platinumkey = false;
-    bool bosskey = false;
-    bool firemage = false;
-    bool icemage = false;
-    bool watermage = false;
-    bool windmage = false;
-    bool forrestmage = false;
-    bool earthmage = false;
-    bool lightmage = false;
- // bool necromancer = false;
-    bool shadowmancer = false;
-    bool magic = false;
+    public GameObject magicimage, windimage, forrestimage, undeadimage, earthimage,
+        fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb, 
+        wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb, 
+        shadoworb, forceorb,activeclass, coinText;
+    private GameObject prefab,type;
+    public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
+        damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
+        earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
+        undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
+    public int coinCount, currentClass;
+    public bool bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
+        forrestmage, earthmage, lightmage, necromancer, shadowmancer, technomancer, magic,
+        classIsSwitching = false;
     public string magictype = "normal";
-    public GameObject coinText;
     void Start()
     {
+        classIsSwitching = true;
         timer = shootDelay;
     }
-
     // Use this for initialization
     void OnCollisionEnter2D(Collision2D myCollisionInfo)
     {
@@ -110,65 +62,102 @@ public class playerMove : MonoBehaviour {
             //open boss door
             bosskey = true;
         }
+      /* else if (myCollisionInfo.gameObject.name==necromancy)
+        {
 
+        } */
     }
     // Update is called once per frame
     void Update()
     {
+        float classvar = Input.GetAxis("Mouse ScrollWheel");
+        if (classvar > 0f)
+        {
+            currentClass = currentClass + 1;
+            classIsSwitching = true;
+        }
+        else if (classvar<0f)
+        {
+            currentClass = currentClass - 1;
+                classIsSwitching = true;
+        }
+        if (classIsSwitching == true)
+        {
+            switch(currentClass)
+            {
+                case 0: magictype = "normal";
+                    break;
+                case 1:if(necromancer==true)
+                    {
+                        magictype = ("undead");
+                        Debug.Log("undead");
+                    }
+                    break;
+                case 2:  if(windmage == true)
+                    {
+                        magictype = ("wind");
+                        Debug.Log("wind");
+                    }
+                    break;
+                case 3: if (forrestmage == true)
+                    {
+                        magictype = ("forrest");
+                        Debug.Log("forrest");
+                    }
+                    break;
+                case 4: if(earthmage == true)
+                {
+                        magictype = ("earth");
+                        Debug.Log("earth");
+                }
+                    break;
+                case 5:if (firemage == true)
+                    {
+                        magictype = ("fire");
+                        Debug.Log("fire");
+                    }
+                    break;
+                case 6:if (watermage==true)
+                    {
+                        magictype = ("water");
+                        Debug.Log("water");
+                    }
+                    break;
+                case 7:   if (icemage==true)
+                    {
+                        magictype = ("ice");
+                        Debug.Log("ice");
+                    }
+                    break;
+                case 8:   if (technomancer==true)
+                    {
+                        magictype = ("tech");
+                        Debug.Log("tech");
+                    }
+                    break;
+                case 9:   if(lightmage==true)
+                    {
+                        magictype = ("light");
+                        Debug.Log("light");
+                    }
+                    break;
+                case 10:if (shadowmancer==true)
+                    {
+                        magictype = ("shadow");
+                        Debug.Log("shadow");
+                    }
+                    break;
+                default: magictype = ("normal");
+                    Debug.Log("normal");
+                    break;
+            }
+        }
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
         Vector2 push = new Vector2(horizontal, vertical);
         gameObject.GetComponent<Rigidbody2D>().velocity = push * speed;
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            magictype = ("normal");
-            Debug.Log("uno");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            magictype = ("wind");
-            Debug.Log("wind");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            magictype = ("normal");
-            Debug.Log("normal");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha4))
-        {
-            magictype = ("earth");
-            Debug.Log("earth");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha5))
-        {
-            magictype = ("fire");
-            Debug.Log("fire);
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha6))
-        {
-            magictype = ("water");
-            Debug.Log("water");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha7))
-        {
-            magictype = ("ice");
-            Debug.Log("ice");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha8))
-        {
-            magictype = ("tech");
-            Debug.Log("tech");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha9)   )
-        {
-            magictype = ("light");
-            Debug.Log("light");
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha0))
-        {
-            magictype = ("shadow");
-            Debug.Log("shadow");
-        }
+        if (Input.GetKeyDown(KeyCode.Alpha9))
+
         if (Input.GetButtonDown("Fire1"))
             {
             var mousePosition = Input.mousePosition;
@@ -188,13 +177,15 @@ public class playerMove : MonoBehaviour {
                 prefab = wind;
                 damage = winddamage;
                 //knockback
+                Debug.Log("windshoot");
             }
             
             else if (magictype == "forrest")
             {
                 type = forrestimage;
-                prefab = liefball;
+                prefab = leafball;
                 damage = forrestdamage;
+                Debug.Log("forrestshoot");
                 //target is restrained temporarily
             }
            
@@ -203,6 +194,7 @@ public class playerMove : MonoBehaviour {
                 type = earthimage;
                 prefab = rock;
                 damage = earthdammage;
+                Debug.Log("earthshoot");
                 //ground shakes and enemies are stunned
             }
             else if (magictype == "fire")
@@ -210,24 +202,34 @@ public class playerMove : MonoBehaviour {
                 type = fireimage;
                 prefab = fireball;
                 damage = firedamage;
+                Debug.Log("fireshoot");
+            } 
+            else if (magictype == "undead")
+            {
+                type = undeadimage;
+                prefab = acidball;
+                damage = undeaddamage;
             }
             else if (magictype == "water")
             {
                 type = waterimage;
                 prefab = waterball;
                 damage = waterdamage;
+                Debug.Log("watershoot");
             }
             else if (magictype == "ice")
             {
                 type = iceimage;
                 prefab = icespike;
                 damage = icedamage;
+                Debug.Log("iceshoot");
             }
             else if (magictype == "magic")
             {
                 type = magicimage;
                 prefab = magicorb;
                 damage = magicdamage;
+                Debug.Log("magicshoot");
             }
             else if (magictype == "light")
             {
