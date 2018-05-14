@@ -122,54 +122,54 @@ public class playerMove : MonoBehaviour {
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             magictype = ("normal");
-            //Debug.Log("uno");
+            Debug.Log("uno");
         }
         if (Input.GetKeyDown(KeyCode.Alpha2))
         {
             magictype = ("wind");
-            //Debug.Log("wind");
+            Debug.Log("wind");
         }
         if (Input.GetKeyDown(KeyCode.Alpha3))
         {
             magictype = ("normal");
-            //Debug.Log("normal");
+            Debug.Log("normal");
         }
         if (Input.GetKeyDown(KeyCode.Alpha4))
         {
             magictype = ("earth");
-            //Debug.Log("earth");
+            Debug.Log("earth");
         }
         if (Input.GetKeyDown(KeyCode.Alpha5))
         {
             magictype = ("fire");
-            //Debug.Log("fire);
+            Debug.Log("fire);
         }
         if (Input.GetKeyDown(KeyCode.Alpha6))
         {
             magictype = ("water");
-            //Debug.Log("water");
+            Debug.Log("water");
         }
         if (Input.GetKeyDown(KeyCode.Alpha7))
         {
             magictype = ("ice");
-            //Debug.Log("ice");
+            Debug.Log("ice");
         }
         if (Input.GetKeyDown(KeyCode.Alpha8))
         {
             magictype = ("tech");
-            //Debug.Log("tech");
+            Debug.Log("tech");
         }
         if (Input.GetKeyDown(KeyCode.Alpha9)   )
         {
             magictype = ("light");
-            //Debug.Log("light);
+            Debug.Log("light");
         }
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             magictype = ("shadow");
-            //Debug.Log("shadow");
+            Debug.Log("shadow");
         }
-        if (Input.GetButtonDown("fire1"))
+        if (Input.GetButtonDown("Fire1"))
             {
             var mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -234,6 +234,7 @@ public class playerMove : MonoBehaviour {
                 type = lightimage;
                 prefab = lightorb;
                 damage = lightdamage;
+                Debug.Log("lightshoot");
             }
            
             else if (magictype == "shadow")
@@ -241,21 +242,16 @@ public class playerMove : MonoBehaviour {
                 type = shadowimage;
                 prefab = shadoworb;
                 damage = shadowdamage;
+                Debug.Log("shadowshoot");
             }
             else if (magictype == "tech")
             {
                 type = techimage;
                 prefab = techbomb;
                 damage = techdamage;
+                Debug.Log("techshoot");
             }
-           /*lse
-            {
-                type = normalimage;
-                prefab = forceorb;
-                damage = 1;
-               //no special
-           
-            }  */
+         
         }
     }
 
