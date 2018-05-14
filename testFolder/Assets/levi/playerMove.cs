@@ -7,7 +7,8 @@ public class playerMove : MonoBehaviour {
     public GameObject magicimage, windimage, forrestimage, undeadimage, earthimage,
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb, 
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb, 
-        shadoworb, forceorb,activeclass, coinText;
+        shadoworb, forceorb,activeclass, coinText, necrobuff, magicbuff, windbuff, forrestbuff, 
+        earthbuff,firebuff, waterbuff, icebuff,techbuff, lightbuff, shadowbuff;
     private GameObject prefab,type;
     public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
         damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
@@ -15,7 +16,7 @@ public class playerMove : MonoBehaviour {
         undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
     public int coinCount, currentClass;
     public bool bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
-        forrestmage, earthmage, lightmage, necromancer, shadowmancer, technomancer, magic,
+        forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic,
         classIsSwitching = false;
     public string magictype = "normal";
     void Start()
@@ -26,6 +27,7 @@ public class playerMove : MonoBehaviour {
     // Use this for initialization
     void OnCollisionEnter2D(Collision2D myCollisionInfo)
     {
+        
         if (myCollisionInfo.gameObject.name == "Coin")
         {
             //destroy the coin
@@ -62,10 +64,50 @@ public class playerMove : MonoBehaviour {
             //open boss door
             bosskey = true;
         }
-      /* else if (myCollisionInfo.gameObject.name==necromancy)
+        else if (myCollisionInfo.gameObject == necrobuff)
         {
-
-        } */
+            necromancer = true;
+        }
+        else if (myCollisionInfo.gameObject == windbuff)
+        {
+            windmage = true;
+        }
+        else if (myCollisionInfo.gameObject == forrestbuff)
+        {
+            forrestmage = true;
+        }
+        else if (myCollisionInfo.gameObject == earthbuff)
+        {
+            earthmage = true;
+        }
+        else if (myCollisionInfo.gameObject == firebuff)
+        {
+            firemage = true;
+        }
+        else if (myCollisionInfo.gameObject == waterbuff)
+        {
+            watermage = true;
+        }
+        else if (myCollisionInfo.gameObject == icebuff)
+        {
+            icemage = true;
+        }
+        else if (myCollisionInfo.gameObject == magicbuff)
+        {
+            magition = true;
+        }
+        else if (myCollisionInfo.gameObject == techbuff)
+        {
+            technomancer = true;
+        }
+        else if (myCollisionInfo.gameObject == lightbuff)
+        {
+            lightmage = true;
+        }
+        else if(myCollisionInfo.gameObject==shadowbuff)
+        {
+            shadowmancer = true;
+        }
     }
     // Update is called once per frame
     void Update()
@@ -145,6 +187,12 @@ public class playerMove : MonoBehaviour {
                     {
                         magictype = ("shadow");
                         Debug.Log("shadow");
+                    }
+                    break;
+                case 11: if (magition == true)
+                    {
+                        magictype = "magic";
+                        Debug.Log("magic");
                     }
                     break;
                 default: magictype = ("normal");
