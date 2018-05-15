@@ -1,0 +1,48 @@
+fileFormatVersion: 2
+guid: c9105a6d6a869674298afb864531b145
+timeCreated: 1525977468
+licenseType: Free
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - magicimage: {fileID: 1847470841737134, guid: db5851156f0c0c4418effe9c9c84cf74,
+      type: 2}
+  - windimage: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6,
+      type: 2}
+  - forrestimage: {fileID: 1124067638687420, guid: 330dced28a68f9f4dbd3e17251e1fc16,
+      type: 2}
+  - undeadimage: {fileID: 1674193250723156, guid: 8e365468db3e988458d78f408dee859a,
+      type: 2}
+  - earthimage: {fileID: 1549685767704662, guid: 2abe998ad01d02740975d5896f9d3d47,
+      type: 2}
+  - fireimage: {fileID: 1705805307810110, guid: c1de3df3dcb99174bb18617aa4cb86c9,
+      type: 2}
+  - waterimage: {fileID: 1866902434503730, guid: b8b3be76ba0605143962620db91da9d1,
+      type: 2}
+  - iceimage: {fileID: 1413904014244984, guid: 8fd6140237ceb4740aa9afde980276b4, type: 2}
+  - techimage: {fileID: 1344544404412982, guid: e42cb73fa0997e54296a1e4efd129204,
+      type: 2}
+  - lightimage: {fileID: 1414188857139590, guid: 9ab033bc1b3ff1148997802faee1ca59,
+      type: 2}
+  - shadowimage: {fileID: 1009110851146496, guid: a553b8e5ba712334b8e20684990168c9,
+      type: 2}
+  - magicorb: {fileID: 1181814420235536, guid: 861bbaff8826b424984564dbd821fe26, type: 2}
+  - wind: {fileID: 1090735802210706, guid: 008fa0b7cba31f14ca4428c4ba13e060, type: 2}
+  - leafball: {fileID: 1555608637757572, guid: 875b8aab66d448949a41425248c1a64e, type: 2}
+  - acidball: {fileID: 1610995936836368, guid: 4bded1c36add7ea4cbef89d48637e04e, type: 2}
+  - rock: {instanceID: 0}
+  - fireball: {instanceID: 0}
+  - waterball: {instanceID: 0}
+  - icespike: {instanceID: 0}
+  - techbomb: {instanceID: 0}
+  - lightorb: {instanceID: 0}
+  - shadoworb: {instanceID: 0}
+  - forceorb: {instanceID: 0}
+  - activeclass: {instanceID: 0}
+  - coinText: {instanceID: 0}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

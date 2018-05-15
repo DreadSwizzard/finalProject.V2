@@ -5,10 +5,9 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
     public GameObject magicimage, windimage, forrestimage, undeadimage, earthimage,
-        fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb, 
-        wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb, 
-        shadoworb, forceorb,activeclass, coinText, necrobuff, magicbuff, windbuff, forrestbuff, 
-        earthbuff,firebuff, waterbuff, icebuff,techbuff, lightbuff, shadowbuff;
+        fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
+        wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
+        shadoworb, forceorb, activeclass, coinText;
     private GameObject prefab,type;
     public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
         damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
