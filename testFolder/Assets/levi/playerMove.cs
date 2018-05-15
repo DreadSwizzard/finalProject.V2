@@ -37,76 +37,93 @@ public class playerMove : MonoBehaviour {
         if (myCollisionInfo.gameObject.name == "bronzekey")
         {
             //open bronze door
+            Destroy(myCollisionInfo.gameObject);
             bronzekey = true;
         }
         else if (myCollisionInfo.gameObject.name == "silverkey")
         {
             //open silver door
+            Destroy(myCollisionInfo.gameObject);
             silverkey = true;
         }
         else if (myCollisionInfo.gameObject.name == "goldkey")
         {
             //open gold door
+            Destroy(myCollisionInfo.gameObject);
             goldkey = true;
         }
         else if (myCollisionInfo.gameObject.name == "diamondkey")
         {
             //open diamond door
+            Destroy(myCollisionInfo.gameObject);
             diamondkey = true;
         }
         else if (myCollisionInfo.gameObject.name == "platinumkey")
         {
             //open platnum door
+            Destroy(myCollisionInfo.gameObject);
             platinumkey = true;
         }
         else if (myCollisionInfo.gameObject.name == "bosskey")
         {
             //open boss door
+            Destroy(myCollisionInfo.gameObject);
             bosskey = true;
         }
-        else if (myCollisionInfo.gameObject == necrobuff)
+        else if (myCollisionInfo.gameObject.name == "necrobuff")
         {
             necromancer = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == windbuff)
+        else if (myCollisionInfo.gameObject.name == "windbuff")
         {
             windmage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == forrestbuff)
+        else if (myCollisionInfo.gameObject.name == "forrestbuff")
         {
             forrestmage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == earthbuff)
+        else if (myCollisionInfo.gameObject.name == "earthbuff")
         {
             earthmage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == firebuff)
+        else if (myCollisionInfo.gameObject.name == "firebuff")
         {
             firemage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == waterbuff)
+        else if (myCollisionInfo.gameObject.name == "waterbuff")
         {
             watermage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == icebuff)
+        else if (myCollisionInfo.gameObject.name == "icebuff")
         {
             icemage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == magicbuff)
+        else if (myCollisionInfo.gameObject.name == "magicbuff")
         {
             magition = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == techbuff)
+        else if (myCollisionInfo.gameObject.name == "techbuff")
         {
             technomancer = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject == lightbuff)
+        else if (myCollisionInfo.gameObject.name == "lightbuff")
         {
             lightmage = true;
+            Destroy(myCollisionInfo.gameObject);
         }
-        else if(myCollisionInfo.gameObject==shadowbuff)
+        else if(myCollisionInfo.gameObject.name=="shadowsym")
         {
             shadowmancer = true;
+            Destroy(myCollisionInfo.gameObject);
         }
     }
     // Update is called once per frame
