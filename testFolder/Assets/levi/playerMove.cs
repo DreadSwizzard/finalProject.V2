@@ -70,52 +70,52 @@ public class playerMove : MonoBehaviour {
             Destroy(myCollisionInfo.gameObject);
             bosskey = true;
         }
-        else if (myCollisionInfo.gameObject.name == "necrobuff")
+        else if (myCollisionInfo.gameObject.name == "undeadsym")
         {
             necromancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "windbuff")
+        else if (myCollisionInfo.gameObject.name == "windsym")
         {
             windmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "forrestbuff")
+        else if (myCollisionInfo.gameObject.name == "forrestsym")
         {
             forrestmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "earthbuff")
+        else if (myCollisionInfo.gameObject.name == "earthsym")
         {
             earthmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "firebuff")
+        else if (myCollisionInfo.gameObject.name == "firessym")
         {
             firemage = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "waterbuff")
+        else if (myCollisionInfo.gameObject.name == "watersym")
         {
             watermage = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "icebuff")
+        else if (myCollisionInfo.gameObject.name == "icesym")
         {
             icemage = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "magicbuff")
+        else if (myCollisionInfo.gameObject.name == "magicsym")
         {
             magition = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "techbuff")
+        else if (myCollisionInfo.gameObject.name == "techsym")
         {
             technomancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
-        else if (myCollisionInfo.gameObject.name == "lightbuff")
+        else if (myCollisionInfo.gameObject.name == "lightsym")
         {
             lightmage = true;
             Destroy(myCollisionInfo.gameObject);
