@@ -140,7 +140,7 @@ public class playerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        float classvar = Input.GetAxis("Mouse ScrollWheel");
+        float classvar = Input.GetAxisRaw("Mouse ScrollWheel");
         if (classvar > 0f)
         {
             currentClass = currentClass + 1;
@@ -152,12 +152,12 @@ public class playerMove : MonoBehaviour {
             
                 classIsSwitching = true;
         }
-        else if (classvar >0f && currentClass >=13)
+        if (classvar >0f && currentClass >=13)
         {
             currentClass = 1;
             classIsSwitching = true;
         }
-        else if (classvar<0 && currentClass <=0)
+        if (classvar<0 && currentClass <=0)
         {
             currentClass = 12;
             classIsSwitching = true;

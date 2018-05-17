@@ -1431,7 +1431,7 @@ MonoBehaviour:
   windimage: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6, type: 2}
   forrestimage: {fileID: 1124067638687420, guid: 330dced28a68f9f4dbd3e17251e1fc16,
     type: 2}
-  undeadimage: {fileID: 1766930369755488, guid: 89cd57ad25021fa4aaf729a10d7d1153,
+  undeadimage: {fileID: 1674193250723156, guid: 8e365468db3e988458d78f408dee859a,
     type: 2}
   earthimage: {fileID: 1549685767704662, guid: 2abe998ad01d02740975d5896f9d3d47, type: 2}
   fireimage: {fileID: 1705805307810110, guid: c1de3df3dcb99174bb18617aa4cb86c9, type: 2}
@@ -1456,18 +1456,6 @@ MonoBehaviour:
   activeclass: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5,
     type: 2}
   coinText: {fileID: 373089259}
-  necrobuff: {fileID: 1766930369755488, guid: 89cd57ad25021fa4aaf729a10d7d1153, type: 2}
-  magicbuff: {fileID: 1847470841737134, guid: db5851156f0c0c4418effe9c9c84cf74, type: 2}
-  windbuff: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6, type: 2}
-  forrestbuff: {fileID: 1124067638687420, guid: 330dced28a68f9f4dbd3e17251e1fc16,
-    type: 2}
-  earthbuff: {fileID: 1549685767704662, guid: 2abe998ad01d02740975d5896f9d3d47, type: 2}
-  firebuff: {fileID: 1705805307810110, guid: c1de3df3dcb99174bb18617aa4cb86c9, type: 2}
-  waterbuff: {fileID: 1866902434503730, guid: b8b3be76ba0605143962620db91da9d1, type: 2}
-  icebuff: {fileID: 1413904014244984, guid: 8fd6140237ceb4740aa9afde980276b4, type: 2}
-  techbuff: {fileID: 1344544404412982, guid: e42cb73fa0997e54296a1e4efd129204, type: 2}
-  lightbuff: {fileID: 1414188857139590, guid: 9ab033bc1b3ff1148997802faee1ca59, type: 2}
-  shadowbuff: {fileID: 1009110851146496, guid: a553b8e5ba712334b8e20684990168c9, type: 2}
   bulletSpeed: 10
   bulletLifetime: 1
   shootDelay: 1
@@ -1485,6 +1473,7 @@ MonoBehaviour:
   undeaddamage: 3
   shadowdamage: 3.5
   techdamage: 8
+  currentcase: 0
   coinCount: 0
   currentClass: 0
   bronzekey: 0
