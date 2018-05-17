@@ -31,15 +31,18 @@ MonoImporter:
   - wind: {fileID: 1090735802210706, guid: 008fa0b7cba31f14ca4428c4ba13e060, type: 2}
   - leafball: {fileID: 1555608637757572, guid: 875b8aab66d448949a41425248c1a64e, type: 2}
   - acidball: {fileID: 1610995936836368, guid: 4bded1c36add7ea4cbef89d48637e04e, type: 2}
-  - rock: {instanceID: 0}
-  - fireball: {instanceID: 0}
-  - waterball: {instanceID: 0}
-  - icespike: {instanceID: 0}
-  - techbomb: {instanceID: 0}
-  - lightorb: {instanceID: 0}
-  - shadoworb: {instanceID: 0}
-  - forceorb: {instanceID: 0}
-  - activeclass: {instanceID: 0}
+  - rock: {fileID: 1979941462944042, guid: 7801e3b04bf31f749afcf8aee8f968fc, type: 2}
+  - fireball: {fileID: 1719769294128118, guid: 4d2e5b7727aa485458cbcea87c858f1e, type: 2}
+  - waterball: {fileID: 1974576551957078, guid: 54907a8ad46ef3045ab9f1a69b537fed,
+      type: 2}
+  - icespike: {fileID: 1449117335999996, guid: d6e0571310b181e4cac598f388e3eb3b, type: 2}
+  - techbomb: {fileID: 1799578436999028, guid: ed8f12e3a6f6e134eb2eeedf5cefe7fd, type: 2}
+  - lightorb: {fileID: 1618306964775464, guid: f54aceb7116075049a1ddf8a202b46b1, type: 2}
+  - shadoworb: {fileID: 1711204719442256, guid: b950ea465e6d0ac4a841db980c76faa0,
+      type: 2}
+  - forceorb: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5, type: 2}
+  - activeclass: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5,
+      type: 2}
   - coinText: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}

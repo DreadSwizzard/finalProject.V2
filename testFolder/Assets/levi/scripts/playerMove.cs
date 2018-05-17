@@ -13,13 +13,14 @@ public class playerMove : MonoBehaviour {
         damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
         earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
         undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
-    public int coinCount, currentClass;
+    public int currentcase, coinCount, currentClass;
     public bool bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
         forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic,
         classIsSwitching = false;
     public string magictype = "normal";
     void Start()
     {
+        currentClass = currentcase;
         classIsSwitching = true;
         timer = shootDelay;
     }
@@ -71,56 +72,67 @@ public class playerMove : MonoBehaviour {
         }
         else if (myCollisionInfo.gameObject.name == "undeadsym")
         {
+            Debug.Log(myCollisionInfo);
             necromancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "windsym")
         {
+            Debug.Log(myCollisionInfo);
             windmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "forrestsym")
         {
+            Debug.Log(myCollisionInfo);
             forrestmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "earthsym")
         {
+            Debug.Log(myCollisionInfo);
             earthmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "firessym")
         {
+            Debug.Log(myCollisionInfo);
             firemage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "watersym")
         {
+            Debug.Log(myCollisionInfo);
             watermage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "icesym")
         {
+            Debug.Log(myCollisionInfo);
             icemage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "magicsym")
         {
+            Debug.Log(myCollisionInfo);
             magition = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "techsym")
         {
+            Debug.Log(myCollisionInfo);
             technomancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "lightsym")
         {
+            Debug.Log(myCollisionInfo);
             lightmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if(myCollisionInfo.gameObject.name=="shadowsym")
         {
+            Debug.Log(myCollisionInfo);
             shadowmancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
@@ -137,10 +149,21 @@ public class playerMove : MonoBehaviour {
         else if (classvar<0f)
         {
             currentClass = currentClass - 1;
+            
                 classIsSwitching = true;
         }
-        if (classIsSwitching == true)
+        else if (classvar >0f && currentClass >=13)
         {
+            currentClass = 1;
+            classIsSwitching = true;
+        }
+        else if (classvar<0 && currentClass <=0)
+        {
+            currentClass = 12;
+            classIsSwitching = true;
+        }
+        if (classIsSwitching == true)
+        {       
             switch(currentClass)
             {
                 case 0: magictype = "normal";
@@ -211,10 +234,11 @@ public class playerMove : MonoBehaviour {
                         Debug.Log("magic");
                     }
                     break;
-                default: magictype = ("normal");
+                case 12: magictype = ("normal");
                     Debug.Log("normal");
                     break;
             }
+          
         }
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
