@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
-    public GameObject magicimage, windimage, forrestimage, undeadimage, earthimage,
+    public GameObject magicimage, windimage, forrestimage, undeadimage, earthimage, normal,
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
-        shadoworb, forceorb, activeclass, coinText;
-    private GameObject prefab,type;
+        shadoworb, forceorb, activeclass, coinText, prefab, type;
     public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
         damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
         earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
@@ -72,67 +71,67 @@ public class playerMove : MonoBehaviour {
         }
         else if (myCollisionInfo.gameObject.name == "undeadsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             necromancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "windsym")
         {
-            Debug.Log(myCollisionInfo);
+           // Debug.Log(myCollisionInfo);
             windmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "forrestsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             forrestmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "earthsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             earthmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "firessym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             firemage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "watersym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             watermage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "icesym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             icemage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "magicsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             magition = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "techsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             technomancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if (myCollisionInfo.gameObject.name == "lightsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             lightmage = true;
             Destroy(myCollisionInfo.gameObject);
         }
         else if(myCollisionInfo.gameObject.name=="shadowsym")
         {
-            Debug.Log(myCollisionInfo);
+            //Debug.Log(myCollisionInfo);
             shadowmancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
@@ -171,71 +170,107 @@ public class playerMove : MonoBehaviour {
                 case 1:if(necromancer==true)
                     {
                         magictype = ("undead");
-                        Debug.Log("undead");
+                        type = undeadimage;
+                        prefab = acidball;
+                        damage = undeaddamage;  
+                        //              Debug.Log("undead");
                     }
                     break;
                 case 2:  if(windmage == true)
                     {
                         magictype = ("wind");
-                        Debug.Log("wind");
+                        type = windimage;
+                        prefab = wind;
+                        damage = winddamage;
+            //            Debug.Log("wind");
                     }
                     break;
                 case 3: if (forrestmage == true)
                     {
                         magictype = ("forrest");
-                        Debug.Log("forrest");
+                        type = forrestimage;
+                        prefab = leafball;
+                        damage = forrestdamage;
+              //          Debug.Log("forrest");
                     }
                     break;
                 case 4: if(earthmage == true)
                 {
                         magictype = ("earth");
-                        Debug.Log("earth");
+                        type = earthimage;
+                        prefab = rock;
+                        damage = earthdammage;
+                //        Debug.Log("earth");
                 }
                     break;
                 case 5:if (firemage == true)
                     {
                         magictype = ("fire");
-                        Debug.Log("fire");
+                        type = fireimage;
+                        prefab = fireball;
+                        damage = firedamage;
+                  //      Debug.Log("fire");
                     }
                     break;
                 case 6:if (watermage==true)
                     {
                         magictype = ("water");
-                        Debug.Log("water");
+                        type = waterimage;
+                        prefab = waterball;
+                        damage = waterdamage;
+                    //    Debug.Log("water");
                     }
                     break;
                 case 7:   if (icemage==true)
                     {
                         magictype = ("ice");
-                        Debug.Log("ice");
+                        type = iceimage;
+                        prefab = icespike;
+                        damage = icedamage;
+                        //Debug.Log("ice");
                     }
                     break;
                 case 8:   if (technomancer==true)
                     {
                         magictype = ("tech");
-                        Debug.Log("tech");
+                        type = techimage;
+                        prefab = techbomb;
+                        damage = techdamage;
+                       // Debug.Log("tech");
                     }
                     break;
                 case 9:   if(lightmage==true)
                     {
                         magictype = ("light");
-                        Debug.Log("light");
+                        type = lightimage;
+                        prefab = lightorb;
+                        damage = lightdamage;
+                       // Debug.Log("light");
                     }
                     break;
                 case 10:if (shadowmancer==true)
                     {
                         magictype = ("shadow");
-                        Debug.Log("shadow");
+                        type = shadowimage;
+                        prefab = shadoworb;
+                        damage = shadowdamage;
+                       // Debug.Log("shadow");
                     }
                     break;
                 case 11: if (magition == true)
                     {
                         magictype = "magic";
-                        Debug.Log("magic");
+                        type = magicimage;
+                        prefab = magicorb;
+                        damage = magicdamage;
+                     //   Debug.Log("magic");
                     }
                     break;
                 case 12: magictype = ("normal");
-                    Debug.Log("normal");
+                    type = normal;
+                    prefab = forceorb;
+                    damage = 1;
+                   // Debug.Log("normal");
                     break;
             }
           
@@ -248,6 +283,7 @@ public class playerMove : MonoBehaviour {
 
         if (Input.GetButtonDown("Fire1"))
             {
+                Debug.Log("shoot");
             var mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             Vector2 shootDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
@@ -259,7 +295,7 @@ public class playerMove : MonoBehaviour {
             bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
             Destroy(bullet, bulletLifetime);
             timer = 0;
-            if (magictype == "wind")
+           /* if (magictype == "wind")
             {
                 type = windimage;
                 prefab = wind;
@@ -340,7 +376,7 @@ public class playerMove : MonoBehaviour {
                 prefab = techbomb;
                 damage = techdamage;
                 Debug.Log("techshoot");
-            }
+            }*/
          
         }
     }
