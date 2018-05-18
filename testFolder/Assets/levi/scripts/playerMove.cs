@@ -279,8 +279,7 @@ public class playerMove : MonoBehaviour {
         float vertical = Input.GetAxis("Vertical");
         Vector2 push = new Vector2(horizontal, vertical);
         gameObject.GetComponent<Rigidbody2D>().velocity = push * speed;
-        if (Input.GetKeyDown(KeyCode.Alpha9))
-
+        
         if (Input.GetButtonDown("Fire1"))
             {
                 Debug.Log("shoot");
