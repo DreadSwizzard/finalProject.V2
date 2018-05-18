@@ -4,4 +4,10 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/levi/start.unity
+    guid: 44d5b4cd71e18c2429d4609701964fd9
+  - enabled: 1
+    path: Assets/levi/scene1.unity
+    guid: 16346952d28135d4cbf3e112c50a250f
