@@ -1,11 +1,13 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
+using System;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.IO;
+using UnityEngine.SceneManagement;
 
 public class save : MonoBehaviour {
 
-
-    /*// Use this for initialization
+         public string sceneName;
+    // Use this for initialization
     void Start()
     {
         Load();
@@ -33,6 +35,7 @@ public class save : MonoBehaviour {
             info.x = transform.position.x;
             info.y = transform.position.y;
             info.z = transform.position.z;
+            info.bosskey = 
         }
         info.playerProgress = PlayerPrefs.GetInt("Progress");
         bf.Serialize(file, info);
@@ -59,9 +62,9 @@ public class save : MonoBehaviour {
 [Serializable]
 public class Save
 {
-    public float x;
-    public float y;
-    public float z;
-
-    public int playerProgress;  */
-}
+    public int coincount, playerProgress;
+    public float x,y,z;
+    public bool bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
+        forrestmage, earthmage, lightmage, necromancer, magition, shadowmancer, technomancer, magic;
+     
+}    

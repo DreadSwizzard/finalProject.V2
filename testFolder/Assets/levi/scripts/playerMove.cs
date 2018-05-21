@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+[RequireComponent(typeof(Rigidbody2D))]
 public class playerMove : MonoBehaviour {
-    public GameObject male, female, player, magicimage, windimage, forrestimage, undeadimage, earthimage, normal,
+    public GameObject male, female, player, invisible, magicimage, windimage, forrestimage, undeadimage, earthimage, normal,
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
         shadoworb, forceorb, activeclass, coinText, prefab, type;
@@ -353,7 +354,9 @@ public class playerMove : MonoBehaviour {
             }
              else if (magictype == "magic")
             {
-              //player is invisible to enemies
+                //player is invisible to enemies
+                Instantiate(invisible, player.transform.position, Quaternion.identity);
+                Destroy(gameObject);
             }
       else if(magictype  == "water")
             {

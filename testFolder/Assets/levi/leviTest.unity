@@ -493,12 +493,6 @@ Prefab:
       propertyPath: coinText
       value: 
       objectReference: {fileID: 373089259}
-    - target: {fileID: 114992181891277958, guid: dcbfa7022de5d4d4e9353e1110b49147,
-        type: 2}
-      propertyPath: prefab
-      value: 
-      objectReference: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5,
-        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbfa7022de5d4d4e9353e1110b49147, type: 2}
   m_IsPrefabParent: 0

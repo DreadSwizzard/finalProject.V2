@@ -209,7 +209,7 @@ MonoBehaviour:
   activeclass: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5,
     type: 2}
   coinText: {fileID: 0}
-  prefab: {fileID: 0}
+  prefab: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5, type: 2}
   type: {fileID: 1515230319771052, guid: 98ccbd0a47983a44fa9ec42925bf136a, type: 2}
   bulletSpeed: 10
   bulletLifetime: 1
@@ -228,6 +228,7 @@ MonoBehaviour:
   undeaddamage: 3
   shadowdamage: 3.5
   techdamage: 8
+  specialdmg: 0
   currentcase: 0
   coinCount: 0
   currentClass: 0
