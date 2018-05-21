@@ -4,9 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class mainmenue : MonoBehaviour {
-    public GameObject charictor;
-    public GameObject male;
-    public GameObject female;
+   
     public void StartGame()
     {
         SceneManager.LoadScene("scene1");
@@ -17,10 +15,12 @@ public class mainmenue : MonoBehaviour {
     }
     public void white()
     {
-        charictor = male;
+        PlayerPrefs.SetInt("gender", 1);
+        //set player male
     }
     public void pink()
     {
-        charictor = female;
+        PlayerPrefs.SetInt("gender", 2);
+        //set player female
     }
 }

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class playerMove : MonoBehaviour {
-    public GameObject magicimage, windimage, forrestimage, undeadimage, earthimage, normal,
+    public GameObject male, female, player, magicimage, windimage, forrestimage, undeadimage, earthimage, normal,
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
         shadoworb, forceorb, activeclass, coinText, prefab, type;
@@ -13,12 +13,21 @@ public class playerMove : MonoBehaviour {
         earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
         undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
     public int currentcase, coinCount, currentClass;
-    public bool bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
+    public bool  bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
         forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic,
         classIsSwitching = false;
     public string magictype = "normal";
     void Start()
     {
+        if (PlayerPrefs.GetInt("gender") == 1)
+        {
+            player = male;
+
+        }
+        if (PlayerPrefs.GetInt("gender") == 2)
+        {
+            player = female;
+        }
         currentClass = currentcase;
         classIsSwitching = true;
         timer = shootDelay;
@@ -139,6 +148,7 @@ public class playerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        
         float classvar = Input.GetAxisRaw("Mouse ScrollWheel");
         if (classvar > 0f)
         {

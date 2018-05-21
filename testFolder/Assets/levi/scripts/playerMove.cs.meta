@@ -6,6 +6,9 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
+  - male: {fileID: 1245304909301182, guid: dcbfa7022de5d4d4e9353e1110b49147, type: 2}
+  - female: {fileID: 1349615023583308, guid: fda3681b34677804e967067550d06e04, type: 2}
+  - player: {fileID: 1349615023583308, guid: fda3681b34677804e967067550d06e04, type: 2}
   - magicimage: {fileID: 1847470841737134, guid: db5851156f0c0c4418effe9c9c84cf74,
       type: 2}
   - windimage: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6,
@@ -16,6 +19,7 @@ MonoImporter:
       type: 2}
   - earthimage: {fileID: 1549685767704662, guid: 2abe998ad01d02740975d5896f9d3d47,
       type: 2}
+  - normal: {fileID: 1515230319771052, guid: 98ccbd0a47983a44fa9ec42925bf136a, type: 2}
   - fireimage: {fileID: 1705805307810110, guid: c1de3df3dcb99174bb18617aa4cb86c9,
       type: 2}
   - waterimage: {fileID: 1866902434503730, guid: b8b3be76ba0605143962620db91da9d1,
@@ -44,6 +48,8 @@ MonoImporter:
   - activeclass: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5,
       type: 2}
   - coinText: {instanceID: 0}
+  - prefab: {instanceID: 0}
+  - type: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
