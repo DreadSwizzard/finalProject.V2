@@ -56,8 +56,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1754104519642486}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 0.3, z: -10}
+  m_LocalScale: {x: 1, y: 2.2153132, z: 1}
   m_Children: []
   m_Father: {fileID: 4879383201218050}
   m_RootOrder: 0
@@ -96,7 +96,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 0.79327863
+  orthographic size: 0.9405537
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -165,9 +165,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb28423a91a414ca0300f7c93e56e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charictor: {fileID: 0}
-  male: {fileID: 1245304909301182}
-  female: {fileID: 0}
 --- !u!114 &114992181891277958
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -179,6 +176,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9105a6d6a869674298afb864531b145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  male: {fileID: 1245304909301182}
+  female: {fileID: 1349615023583308, guid: fda3681b34677804e967067550d06e04, type: 2}
+  player: {fileID: 0}
   magicimage: {fileID: 1847470841737134, guid: db5851156f0c0c4418effe9c9c84cf74, type: 2}
   windimage: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6, type: 2}
   forrestimage: {fileID: 1124067638687420, guid: 330dced28a68f9f4dbd3e17251e1fc16,

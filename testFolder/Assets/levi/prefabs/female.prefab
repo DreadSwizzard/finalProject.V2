@@ -165,6 +165,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9105a6d6a869674298afb864531b145, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  male: {fileID: 1245304909301182, guid: dcbfa7022de5d4d4e9353e1110b49147, type: 2}
+  female: {fileID: 1349615023583308}
+  player: {fileID: 0}
   magicimage: {fileID: 1847470841737134, guid: db5851156f0c0c4418effe9c9c84cf74, type: 2}
   windimage: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6, type: 2}
   forrestimage: {fileID: 1124067638687420, guid: 330dced28a68f9f4dbd3e17251e1fc16,
@@ -248,9 +251,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb28423a91a414ca0300f7c93e56e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  charictor: {fileID: 0}
-  male: {fileID: 1349615023583308}
-  female: {fileID: 0}
 --- !u!124 &124101029573896242
 Behaviour:
   m_ObjectHideFlags: 1

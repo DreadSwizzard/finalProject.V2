@@ -12,22 +12,25 @@ public class playerMove : MonoBehaviour {
         damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
         earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
         undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
-    public int currentcase, coinCount, currentClass;
+    public int specialdmg, currentcase, coinCount, currentClass;
     public bool  bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
         forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic,
         classIsSwitching = false;
     public string magictype = "normal";
     void Start()
     {
+        Debug.Log(PlayerPrefs.GetInt("gender"));
         if (PlayerPrefs.GetInt("gender") == 1)
         {
-            player = male;
+           
+            Instantiate(male, player.transform.position, Quaternion.identity);
+            Destroy(gameObject);
 
         }
-        if (PlayerPrefs.GetInt("gender") == 2)
+        /*if (PlayerPrefs.GetInt("gender") == 2)
         {
             player = female;
-        }
+        } */
         currentClass = currentcase;
         classIsSwitching = true;
         timer = shootDelay;
@@ -182,7 +185,8 @@ public class playerMove : MonoBehaviour {
                         magictype = ("undead");
                         type = undeadimage;
                         prefab = acidball;
-                        damage = undeaddamage;  
+                        damage = undeaddamage;
+                        specialdmg = 15;
                         //              Debug.Log("undead");
                     }
                     break;
@@ -192,6 +196,7 @@ public class playerMove : MonoBehaviour {
                         type = windimage;
                         prefab = wind;
                         damage = winddamage;
+                        specialdmg = 9;
             //            Debug.Log("wind");
                     }
                     break;
@@ -307,6 +312,55 @@ public class playerMove : MonoBehaviour {
           
          
         }
+     if (Input.GetButtonDown("Fire2"))
+     {
+            damage = specialdmg;
+      if (magictype == "wind")
+            {
+              //knockback
+            }
+           else if (magictype == "undead")
+            {
+             //reanimate enemy to fight for you
+            }
+           else if (magictype == "forrest")
+            {
+             //regen health
+            }
+               else if(magictype =="light")
+            {
+               //blindes enemies / lights up dark areas/
+            }
+      else if (magictype == "fire")
+            {
+             //enemies in area are on fire
+            }
+      else if (magictype == "shadow")
+            {
+             //enemy hit attacks other enemies
+            }
+       else if(magictype == "earth")
+            {
+                //earthquake/enemies stunned
+            }
+      else if (magictype == "ice")
+            {
+              //enemies are frozen
+            }
+      else if (magictype == "tech")
+            {
+             //enemies are stunned/ electrocuted
+            }
+             else if (magictype == "magic")
+            {
+              //player is invisible to enemies
+            }
+      else if(magictype  == "water")
+            {
+               //wave pushes enemies away
+            }
+               
+     }
     }
 
 }

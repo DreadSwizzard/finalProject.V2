@@ -497,12 +497,8 @@ Prefab:
         type: 2}
       propertyPath: prefab
       value: 
-      objectReference: {fileID: 1283832395}
-    - target: {fileID: 114100730147405630, guid: dcbfa7022de5d4d4e9353e1110b49147,
+      objectReference: {fileID: 1874477017170804, guid: 419ed76c44fcb154fbee6e2f5b37b1d5,
         type: 2}
-      propertyPath: charictor
-      value: 
-      objectReference: {fileID: 1824276627}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dcbfa7022de5d4d4e9353e1110b49147, type: 2}
   m_IsPrefabParent: 0
@@ -826,11 +822,6 @@ CapsuleCollider2D:
   m_Offset: {x: -0.000000358494, y: -0.007265092}
   m_Size: {x: 0.67549765, y: 0.27834257}
   m_Direction: 1
---- !u!1 &1283832395 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1413904014244984, guid: 8fd6140237ceb4740aa9afde980276b4,
-    type: 2}
-  m_PrefabInternal: {fileID: 1386964708}
 --- !u!1 &1316456965
 GameObject:
   m_ObjectHideFlags: 0

@@ -17,10 +17,12 @@ public class mainmenue : MonoBehaviour {
     {
         PlayerPrefs.SetInt("gender", 1);
         //set player male
+        Debug.Log(PlayerPrefs.GetInt("gender"));
     }
     public void pink()
     {
         PlayerPrefs.SetInt("gender", 2);
         //set player female
+        Debug.Log(PlayerPrefs.GetInt("gender"));
     }
 }
