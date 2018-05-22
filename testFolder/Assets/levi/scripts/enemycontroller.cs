@@ -3,27 +3,45 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class enemycontroller : MonoBehaviour {
-    public GameObject player, target;
+    public GameObject male, female, target;
     public float chaseSpeed = 2.0f, chaseTriggerDistance = 3.0f, paceDistance = 3.0f;
     private Vector3 startPosition;
+    private Vector2 chaseDirection;
     private bool home = true;
     public Vector3 paceDirection = new Vector3(0f, 0f, 0f);
-    public bool playerInVisible, isUndead = false;
+    public bool playerInVisible, isUndead, maleexists,femaleexists= false;
     // Use this for initialization
     void Start()
     {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
-       
+           
     }
 
     // Update is called once per frame
     void Update()
     {
-
-        Vector3 playerPosition = player.transform.position;
-        Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x,
-                                                playerPosition.y - transform.position.y);
+        if (male = null)
+        {
+            femaleexists = true;
+        }
+        else
+        {
+            maleexists = true;
+        }
+        if (maleexists == true)
+        {
+            Vector3 malePosition = male.transform.position;
+            Vector2 chaseDirection = new Vector2(malePosition.x - transform.position.x,
+                                               malePosition.y - transform.position.y);
+        }
+           else
+        {
+            Vector3 femalePosition = male.transform.position;
+            Vector2 chaseDirection = new Vector2(femalePosition.x - transform.position.x,
+                                               femalePosition.y - transform.position.y);
+        }
+        
         if (chaseDirection.magnitude < chaseTriggerDistance)
         {
             //player gets too close to the enemy
@@ -61,10 +79,7 @@ public class enemycontroller : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity = paceDirection * chaseSpeed;
 
         }
-        if (playerInVisible == true)
-        {
-            player = null;
-        }
+       
         if (isUndead == true)
         {
             //attack for player
