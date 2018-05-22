@@ -35,7 +35,7 @@ public class save : MonoBehaviour {
             info.x = transform.position.x;
             info.y = transform.position.y;
             info.z = transform.position.z;
-            info.bosskey = 
+            
         }
         info.playerProgress = PlayerPrefs.GetInt("Progress");
         bf.Serialize(file, info);

@@ -9,7 +9,8 @@ public class playerMove : MonoBehaviour {
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
         shadoworb, forceorb, activeclass, coinText, prefab, type;
-    public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
+    public float health = 20, firerad,waterrad,lightrad,windrad,earthrad,icerad,forrestrad,magicrad,undeadrad,shadowrad,techrad, radius, 
+        bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
         damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
         earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
         undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
@@ -37,6 +38,12 @@ public class playerMove : MonoBehaviour {
         timer = shootDelay;
     }
     // Use this for initialization
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.blue;
+        Gizmos.DrawWireSphere(transform.position, radius);
+
+    }
     void OnCollisionEnter2D(Collision2D myCollisionInfo)
     {
         
@@ -313,53 +320,69 @@ public class playerMove : MonoBehaviour {
           
          
         }
-     if (Input.GetButtonDown("Fire2"))
+            if (Input.GetButtonDown("Fire2"))
      {
             damage = specialdmg;
-      if (magictype == "wind")
+            if (magictype == "wind")
             {
-              //knockback
+                radius = windrad;
+                //knockback
+              
             }
            else if (magictype == "undead")
             {
-             //reanimate enemy to fight for you
+                //reanimate enemy to fight for you
+                radius = undeadrad;
             }
            else if (magictype == "forrest")
             {
-             //regen health
+                //regen health
+                health += 5;
+                radius = forrestrad;
+                
             }
                else if(magictype =="light")
             {
+            
+                radius = lightrad;
                //blindes enemies / lights up dark areas/
             }
       else if (magictype == "fire")
             {
+                radius = firerad;
              //enemies in area are on fire
             }
       else if (magictype == "shadow")
             {
+                radius = shadowrad;
              //enemy hit attacks other enemies
             }
        else if(magictype == "earth")
             {
+                radius = earthrad;
                 //earthquake/enemies stunned
             }
       else if (magictype == "ice")
             {
-              //enemies are frozen
+                //enemies are frozen
+                radius = icerad;
             }
       else if (magictype == "tech")
             {
-             //enemies are stunned/ electrocuted
+                //enemies are stunned/ electrocuted
+                radius = techrad;
             }
              else if (magictype == "magic")
             {
+                radius = magicrad;
                 //player is invisible to enemies
                 Instantiate(invisible, player.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
       else if(magictype  == "water")
             {
+
+                radius = waterrad;
                //wave pushes enemies away
             }
                

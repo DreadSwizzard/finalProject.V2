@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class enemycontroller : MonoBehaviour {
-    public GameObject player;
+    public GameObject player, target;
     public float chaseSpeed = 2.0f, chaseTriggerDistance = 3.0f, paceDistance = 3.0f;
     private Vector3 startPosition;
     private bool home = true;
@@ -14,12 +14,13 @@ public class enemycontroller : MonoBehaviour {
     {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
-
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+
         Vector3 playerPosition = player.transform.position;
         Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x,
                                                 playerPosition.y - transform.position.y);
@@ -60,10 +61,15 @@ public class enemycontroller : MonoBehaviour {
             GetComponent<Rigidbody2D>().velocity = paceDirection * chaseSpeed;
 
         }
-    if (isUndead == true)
+        if (playerInVisible == true)
+        {
+            player = null;
+        }
+        if (isUndead == true)
         {
             //attack for player
-           // player = gameObject.tag == "enemy";
+            
+           
         }
 
     }
