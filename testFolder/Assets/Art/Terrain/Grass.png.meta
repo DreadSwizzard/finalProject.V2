@@ -1,6 +1,6 @@
 fileFormatVersion: 2
-guid: ecc220b5ab731894e9e5a06d03aa910c
-timeCreated: 1525979416
+guid: 2daeade6ad139674db754945211f4eea
+timeCreated: 1527019259
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -12,6 +12,7 @@ TextureImporter:
     21300010: Grass_5
     21300012: Grass_6
     21300014: Grass_7
+    21300016: Grass_8
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -93,9 +94,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 72
-        width: 36
-        height: 36
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -106,10 +107,10 @@ TextureImporter:
       name: Grass_1
       rect:
         serializedVersion: 2
-        x: 36
-        y: 72
-        width: 36
-        height: 36
+        x: 180
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -120,10 +121,10 @@ TextureImporter:
       name: Grass_2
       rect:
         serializedVersion: 2
-        x: 72
-        y: 72
-        width: 36
-        height: 36
+        x: 360
+        y: 360
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -135,9 +136,9 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 36
-        width: 36
-        height: 36
+        y: 180
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -148,10 +149,10 @@ TextureImporter:
       name: Grass_4
       rect:
         serializedVersion: 2
-        x: 36
-        y: 36
-        width: 36
-        height: 36
+        x: 180
+        y: 180
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -162,10 +163,10 @@ TextureImporter:
       name: Grass_5
       rect:
         serializedVersion: 2
-        x: 72
-        y: 36
-        width: 36
-        height: 36
+        x: 360
+        y: 180
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -178,8 +179,8 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 36
-        height: 36
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -190,10 +191,24 @@ TextureImporter:
       name: Grass_7
       rect:
         serializedVersion: 2
-        x: 36
+        x: 180
         y: 0
-        width: 36
-        height: 36
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Grass_8
+      rect:
+        serializedVersion: 2
+        x: 360
+        y: 0
+        width: 180
+        height: 180
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
