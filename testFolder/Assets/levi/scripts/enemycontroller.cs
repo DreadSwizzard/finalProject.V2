@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class enemycontroller : MonoBehaviour {
-    public GameObject male, female, target;
-    public float chaseSpeed = 2.0f, chaseTriggerDistance = 3.0f, paceDistance = 3.0f;
+    public GameObject male, female, target,prefab,spell;
+    public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,
+        chaseSpeed = 2.0f, chaseTriggerDistance = 3.0f, paceDistance = 3.0f;
     private Vector3 startPosition;
     private Vector2 chaseDirection;
     private bool home = true;
@@ -15,33 +16,60 @@ public class enemycontroller : MonoBehaviour {
     {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
-           
+        timer = shootDelay;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (male = null)
-        {
-            femaleexists = true;
-        }
-        else
+        if (female = null)
         {
             maleexists = true;
         }
         if (maleexists == true)
         {
-            Vector3 malePosition = male.transform.position;
-            Vector2 chaseDirection = new Vector2(malePosition.x - transform.position.x,
-                                               malePosition.y - transform.position.y);
+            target = male;
         }
-           else
+        else
         {
-            Vector3 femalePosition = male.transform.position;
-            Vector2 chaseDirection = new Vector2(femalePosition.x - transform.position.x,
-                                               femalePosition.y - transform.position.y);
+            target = female;
         }
-        
+         
+            Vector3 playerPosition = target.transform.position;
+            Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x,
+                                               playerPosition.y - transform.position.y);
+
+        if (gameObject.name == "archer")
+        {
+            Debug.Log("shoot");
+            var mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Vector2 shootDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+            shootDirection.Normalize();
+            Vector3 spawnPosition = transform.position;
+            spawnPosition.x += shootDirection.x * 0.2f;
+            spawnPosition.y += shootDirection.y * 0.2f;
+            GameObject bullet = (GameObject)Instantiate(prefab, spawnPosition, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
+            Destroy(bullet, bulletLifetime);
+            timer = 0;
+        }
+        if (gameObject.name == "mage")
+        {
+            prefab = spell;
+            Debug.Log("shoot");
+            var mousePosition = Input.mousePosition;
+            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
+            Vector2 shootDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
+            shootDirection.Normalize();
+            Vector3 spawnPosition = transform.position;
+            spawnPosition.x += shootDirection.x * 0.2f;
+            spawnPosition.y += shootDirection.y * 0.2f;
+            GameObject bullet = (GameObject)Instantiate(prefab, spawnPosition, Quaternion.identity);
+            bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
+            Destroy(bullet, bulletLifetime);
+            timer = 0;
+        }
         if (chaseDirection.magnitude < chaseTriggerDistance)
         {
             //player gets too close to the enemy
@@ -83,7 +111,6 @@ public class enemycontroller : MonoBehaviour {
         if (isUndead == true)
         {
             //attack for player
-            
            
         }
 

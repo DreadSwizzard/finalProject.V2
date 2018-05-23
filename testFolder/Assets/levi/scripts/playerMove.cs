@@ -9,15 +9,14 @@ public class playerMove : MonoBehaviour {
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
         shadoworb, forceorb, activeclass, coinText, prefab, type;
-    public float health = 20, firerad,waterrad,lightrad,windrad,earthrad,icerad,forrestrad,magicrad,undeadrad,shadowrad,techrad, radius, 
-        bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,speed = 5.0f,
-        damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,
-        earthdammage = 2.0f, icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f,
-        undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
+    public float basicenemydmg = 2, keeperdmg=5, enemyprojectileDamage = 5, healthPotion,manaregen= 0.017f, maxmana = 20,cost,mana=20,specialcost = 2, tachcost = 1,forrestcost = 1,undeadcost =1,firecost = 1, lightcost=1,icecost = 1, watercost = 1, shadowcost= 1, 
+        earthcost=1,magiccost=1,windcost = 1,health = 20, firerad,waterrad,lightrad,windrad,earthrad,icerad,forrestrad,
+        magicrad,undeadrad,shadowrad,techrad, radius,bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,
+        speed = 5.0f,damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,earthdammage = 2.0f, 
+        icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f, undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
     public int specialdmg, currentcase, coinCount, currentClass;
-    public bool  bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
-        forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic,
-        classIsSwitching = false;
+    public bool spellfail, bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
+        forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic, classIsSwitching = false;
     public string magictype = "normal";
     void Start()
     {
@@ -155,11 +154,39 @@ public class playerMove : MonoBehaviour {
             shadowmancer = true;
             Destroy(myCollisionInfo.gameObject);
         }
+        if (myCollisionInfo.gameObject.tag == "healthpotion")
+            {
+            health += healthPotion;
+        }
+        if (myCollisionInfo.gameObject.tag == "enemyProjectile")
+        {
+            health -= enemyprojectileDamage;
+        }
+        if (myCollisionInfo.gameObject.tag == "enemy")
+        {
+            health -= basicenemydmg;
+        }
+        if (myCollisionInfo.gameObject.tag == "keeper")
+        {
+            health -= keeperdmg;
+        }
+
     }
     // Update is called once per frame
     void Update()
     {
-        
+         if (mana <= 0)
+        {
+            magictype = "normal";
+        }
+         if (cost > mana)
+        {
+            spellfail = true;
+        }
+         else
+        {
+            spellfail = false;
+        }
         float classvar = Input.GetAxisRaw("Mouse ScrollWheel");
         if (classvar > 0f)
         {
@@ -193,6 +220,7 @@ public class playerMove : MonoBehaviour {
                         magictype = ("undead");
                         type = undeadimage;
                         prefab = acidball;
+                        cost = undeadcost;
                         damage = undeaddamage;
                         specialdmg = 15;
                         //              Debug.Log("undead");
@@ -203,6 +231,7 @@ public class playerMove : MonoBehaviour {
                         magictype = ("wind");
                         type = windimage;
                         prefab = wind;
+                        cost = windcost;
                         damage = winddamage;
                         specialdmg = 9;
             //            Debug.Log("wind");
@@ -213,6 +242,7 @@ public class playerMove : MonoBehaviour {
                         magictype = ("forrest");
                         type = forrestimage;
                         prefab = leafball;
+                        cost = forrestcost;
                         damage = forrestdamage;
               //          Debug.Log("forrest");
                     }
@@ -222,6 +252,7 @@ public class playerMove : MonoBehaviour {
                         magictype = ("earth");
                         type = earthimage;
                         prefab = rock;
+                        cost = earthcost;
                         damage = earthdammage;
                 //        Debug.Log("earth");
                 }
@@ -230,6 +261,7 @@ public class playerMove : MonoBehaviour {
                     {
                         magictype = ("fire");
                         type = fireimage;
+                        cost = firecost;
                         prefab = fireball;
                         damage = firedamage;
                   //      Debug.Log("fire");
@@ -239,6 +271,7 @@ public class playerMove : MonoBehaviour {
                     {
                         magictype = ("water");
                         type = waterimage;
+                        cost = watercost;
                         prefab = waterball;
                         damage = waterdamage;
                     //    Debug.Log("water");
@@ -248,6 +281,7 @@ public class playerMove : MonoBehaviour {
                     {
                         magictype = ("ice");
                         type = iceimage;
+                        cost = icecost;
                         prefab = icespike;
                         damage = icedamage;
                         //Debug.Log("ice");
@@ -258,6 +292,7 @@ public class playerMove : MonoBehaviour {
                         magictype = ("tech");
                         type = techimage;
                         prefab = techbomb;
+                        cost = tachcost;
                         damage = techdamage;
                        // Debug.Log("tech");
                     }
@@ -267,6 +302,7 @@ public class playerMove : MonoBehaviour {
                         magictype = ("light");
                         type = lightimage;
                         prefab = lightorb;
+                        cost = lightcost;
                         damage = lightdamage;
                        // Debug.Log("light");
                     }
@@ -274,6 +310,7 @@ public class playerMove : MonoBehaviour {
                 case 10:if (shadowmancer==true)
                     {
                         magictype = ("shadow");
+                        cost = shadowcost;
                         type = shadowimage;
                         prefab = shadoworb;
                         damage = shadowdamage;
@@ -284,6 +321,7 @@ public class playerMove : MonoBehaviour {
                     {
                         magictype = "magic";
                         type = magicimage;
+                        cost = magiccost;
                         prefab = magicorb;
                         damage = magicdamage;
                      //   Debug.Log("magic");
@@ -293,6 +331,7 @@ public class playerMove : MonoBehaviour {
                     type = normal;
                     prefab = forceorb;
                     damage = 1;
+                    cost = 0;
                    // Debug.Log("normal");
                     break;
             }
@@ -302,9 +341,10 @@ public class playerMove : MonoBehaviour {
         float vertical = Input.GetAxis("Vertical");
         Vector2 push = new Vector2(horizontal, vertical);
         gameObject.GetComponent<Rigidbody2D>().velocity = push * speed;
-        
-        if (Input.GetButtonDown("Fire1"))
+
+        if (Input.GetButtonDown("Fire1") && spellfail == false || Input.GetButtonDown("Fire1") && magictype == "normal")
             {
+            mana -= cost;
                 Debug.Log("shoot");
             var mousePosition = Input.mousePosition;
             mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
@@ -320,73 +360,85 @@ public class playerMove : MonoBehaviour {
           
          
         }
-            if (Input.GetButtonDown("Fire2"))
-     {
+            if (Input.GetButtonDown("Fire2")&&spellfail == false)
+            {
             damage = specialdmg;
             if (magictype == "wind")
             {
                 radius = windrad;
                 //knockback
+                mana -= specialcost + windcost;
               
             }
-           else if (magictype == "undead")
+            else if (magictype == "undead")
             {
-                //reanimate enemy to fight for you
-                radius = undeadrad;
+                mana -= specialcost + undeadcost;
+         //reanimate enemy to fight for you
+         radius = undeadrad;
             }
-           else if (magictype == "forrest")
+            else if (magictype == "forrest")
             {
                 //regen health
                 health += 5;
                 radius = forrestrad;
-                
+                mana -= specialcost + forrestcost;
             }
-               else if(magictype =="light")
+            else if(magictype =="light")
             {
-            
-                radius = lightrad;
+                mana -= specialcost + lightcost;
+             radius = lightrad;
                //blindes enemies / lights up dark areas/
             }
-      else if (magictype == "fire")
+            else if (magictype == "fire")
             {
-                radius = firerad;
+                mana -= specialcost + firecost;
+               radius = firerad;
              //enemies in area are on fire
             }
-      else if (magictype == "shadow")
+            else if (magictype == "shadow")
             {
-                radius = shadowrad;
+                mana -= specialcost + shadowcost;
+               radius = shadowrad;
              //enemy hit attacks other enemies
             }
-       else if(magictype == "earth")
+            else if(magictype == "earth")
             {
-                radius = earthrad;
+                mana -= specialcost + earthcost;
+               radius = earthrad;
                 //earthquake/enemies stunned
             }
-      else if (magictype == "ice")
+            else if (magictype == "ice")
             {
-                //enemies are frozen
-                radius = icerad;
+                mana -= specialcost + icecost;
+               //enemies are frozen
+               radius = icerad;
             }
-      else if (magictype == "tech")
+            else if (magictype == "tech")
             {
-                //enemies are stunned/ electrocuted
-                radius = techrad;
+                mana -= specialcost + tachcost;
+               //enemies are stunned/ electrocuted
+               radius = techrad;
             }
-             else if (magictype == "magic")
+            else if (magictype == "magic")
             {
-                radius = magicrad;
+                mana -= specialcost + magiccost;
+               radius = magicrad;
                 //player is invisible to enemies
                 Instantiate(invisible, player.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
-      else if(magictype  == "water")
+            else if(magictype  == "water")
             {
-
-                radius = waterrad;
+                mana -= specialcost + watercost;
+              radius = waterrad;
                //wave pushes enemies away
             }
                
-     }
+            }
+    if (mana < maxmana)
+        {
+            mana += manaregen;
+        }
     }
 
 }
