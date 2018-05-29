@@ -9,7 +9,8 @@ public class playerMove : MonoBehaviour {
         fireimage, waterimage, iceimage, techimage, lightimage, shadowimage, magicorb,
         wind, leafball, acidball, rock, fireball, waterball, icespike, techbomb, lightorb,
         shadoworb, forceorb, activeclass, coinText, prefab, type;
-    public float basicenemydmg = 2, keeperdmg=5, enemyprojectileDamage = 5, healthPotion,manaregen= 0.017f, maxmana = 20,cost,mana=20,specialcost = 2, tachcost = 1,forrestcost = 1,undeadcost =1,firecost = 1, lightcost=1,icecost = 1, watercost = 1, shadowcost= 1, 
+    public float sprintmod = 75.0f,speeddef = 5.0f, basicenemydmg = 2, keeperdmg=5, enemyprojectileDamage = 5, healthPotion,manaregen= 0.017f,
+        maxmana = 20,cost,mana=20,specialcost = 2, tachcost = 1,forrestcost = 1,undeadcost =1,firecost = 1, lightcost=1,icecost = 1, watercost = 1, shadowcost= 1, 
         earthcost=1,magiccost=1,windcost = 1,health = 20, firerad,waterrad,lightrad,windrad,earthrad,icerad,forrestrad,
         magicrad,undeadrad,shadowrad,techrad, radius,bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,
         speed = 5.0f,damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,earthdammage = 2.0f, 
@@ -43,10 +44,11 @@ public class playerMove : MonoBehaviour {
         Gizmos.DrawWireSphere(transform.position, radius);
 
     }
+        
     void OnCollisionEnter2D(Collision2D myCollisionInfo)
     {
         
-        if (myCollisionInfo.gameObject.name == "Coin")
+        if (myCollisionInfo.gameObject.tag == "coin")
         {
             //destroy the coin
             Destroy(myCollisionInfo.gameObject);
@@ -175,7 +177,16 @@ public class playerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-         if (mana <= 0)
+        coinText.GetComponent<Text>().text = "coins: " + coinCount;
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            speed = speed * sprintmod;
+        }
+        else if (Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            speed = speeddef;
+        }
+        if (mana <= 0)
         {
             magictype = "normal";
         }
