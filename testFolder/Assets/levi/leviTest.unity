@@ -759,7 +759,6 @@ MonoBehaviour:
   paceDirection: {x: 0, y: 0, z: 0}
   playerInVisible: 0
   isUndead: 0
-  maleexists: 0
 --- !u!50 &874540918
 Rigidbody2D:
   serializedVersion: 4
@@ -774,12 +773,12 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!212 &874540919
 SpriteRenderer:
   m_ObjectHideFlags: 0

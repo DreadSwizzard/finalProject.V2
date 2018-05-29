@@ -10,7 +10,7 @@ public class enemycontroller : MonoBehaviour {
     private Vector2 chaseDirection;
     private bool home = true;
     public Vector3 paceDirection = new Vector3(0f, 0f, 0f);
-    public bool playerInVisible, isUndead, maleexists= false;
+    public bool playerInVisible, isUndead;
     // Use this for initialization
     void Start()
     {
@@ -19,13 +19,15 @@ public class enemycontroller : MonoBehaviour {
         timer = shootDelay;
         if (female = null)
         {
-            maleexists = true;
-        }
-        if (maleexists == true)
-        {
             target = male;
+                female = male;
         }
-       
+        
+       else if(female !=null)
+        {
+            target = female;
+                male = female;
+        }
     }
 
     // Update is called once per frame
