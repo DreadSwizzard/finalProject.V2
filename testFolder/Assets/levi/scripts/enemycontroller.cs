@@ -10,18 +10,13 @@ public class enemycontroller : MonoBehaviour {
     private Vector2 chaseDirection;
     private bool home = true;
     public Vector3 paceDirection = new Vector3(0f, 0f, 0f);
-    public bool playerInVisible, isUndead, maleexists,femaleexists= false;
+    public bool playerInVisible, isUndead, maleexists= false;
     // Use this for initialization
     void Start()
     {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
         timer = shootDelay;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
         if (female = null)
         {
             maleexists = true;
@@ -30,10 +25,16 @@ public class enemycontroller : MonoBehaviour {
         {
             target = male;
         }
-        else
+        if (maleexists == false)
         {
             target = female;
         }
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+      
          
             Vector3 playerPosition = target.transform.position;
             Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x,

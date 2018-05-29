@@ -747,8 +747,8 @@ MonoBehaviour:
   male: {fileID: 1245304909301182, guid: dcbfa7022de5d4d4e9353e1110b49147, type: 2}
   female: {fileID: 1349615023583308, guid: fda3681b34677804e967067550d06e04, type: 2}
   target: {fileID: 1245304909301182, guid: dcbfa7022de5d4d4e9353e1110b49147, type: 2}
-  prefab: {fileID: 0}
-  spell: {fileID: 0}
+  prefab: {fileID: 1019165727771546, guid: 0dc88c98cce1a804780e83d149565e0b, type: 2}
+  spell: {fileID: 1136952307581198, guid: 03ffe415ac3b8744880ffe669ec2e329, type: 2}
   bulletSpeed: 10
   bulletLifetime: 1
   shootDelay: 1
@@ -760,7 +760,6 @@ MonoBehaviour:
   playerInVisible: 0
   isUndead: 0
   maleexists: 0
-  femaleexists: 0
 --- !u!50 &874540918
 Rigidbody2D:
   serializedVersion: 4
@@ -775,7 +774,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 0
+  m_GravityScale: 1
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -832,7 +831,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 874540916}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.33, y: -0.66, z: -0.05078125}
+  m_LocalPosition: {x: 7.33, y: -0.59, z: -0.05078125}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
