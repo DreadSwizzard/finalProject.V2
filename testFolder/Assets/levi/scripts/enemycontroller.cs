@@ -25,10 +25,7 @@ public class enemycontroller : MonoBehaviour {
         {
             target = male;
         }
-        if (maleexists == false)
-        {
-            target = female;
-        }
+       
     }
 
     // Update is called once per frame
