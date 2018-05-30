@@ -53,6 +53,7 @@ public class playerMove : MonoBehaviour {
             //destroy the coin
             Destroy(myCollisionInfo.gameObject);
             coinCount++;
+            PlayerPrefs.SetInt("coincount", coinCount);
         }
         if (myCollisionInfo.gameObject.name == "bronzekey")
         {
@@ -176,7 +177,7 @@ public class playerMove : MonoBehaviour {
     }
     // Update is called once per frame
     void Update()
-    {
+    {  
        /* coinText.GetComponent<Text>().text = "coins: " + coinCount;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {

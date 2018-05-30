@@ -30,12 +30,28 @@ public class save : MonoBehaviour {
         FileStream file = File.Create(Application.persistentDataPath + "/" + gameObject.name + SceneManager.GetActiveScene().name + "Arcade.dat");
         Save info = new Save();
         //Save myData = new Save();
-        if (sceneName == ("Game"))
+        if (Input.anyKeyDown)
         {
             info.x = transform.position.x;
             info.y = transform.position.y;
             info.z = transform.position.z;
-            
+            if (sceneName == ("Ryandar Village"))
+            {
+                PlayerPrefs.SetInt("scenename",1);
+            }
+            if (sceneName == ("Fields of Ryandar"))
+            {
+                PlayerPrefs.SetInt("scenename", 2);
+            }
+            if (sceneName == ("The Alter"))
+            {
+                PlayerPrefs.SetInt("scenename", 3);
+            }
+            if (sceneName == ("Ryandar Forrest"))
+            {
+                PlayerPrefs.SetInt("scenename", 4);
+            }
+
         }
         info.playerProgress = PlayerPrefs.GetInt("Progress");
         bf.Serialize(file, info);
