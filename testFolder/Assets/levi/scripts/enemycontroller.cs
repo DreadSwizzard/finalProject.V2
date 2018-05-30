@@ -17,16 +17,16 @@ public class enemycontroller : MonoBehaviour {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
         timer = shootDelay;
-        if (female = null)
+        if (PlayerPrefs.GetInt("gender") == 1)
         {
             target = male;
-                female = male;
+            female = male;
         }
         
-       else if(female !=null)
+       else
         {
             target = female;
-                male = female;
+            male = female;
         }
     }
 
