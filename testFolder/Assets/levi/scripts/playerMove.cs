@@ -53,7 +53,6 @@ public class playerMove : MonoBehaviour {
             //destroy the coin
             Destroy(myCollisionInfo.gameObject);
             coinCount++;
-            PlayerPrefs.SetInt("coincount", coinCount);
         }
         if (myCollisionInfo.gameObject.name == "bronzekey")
         {
