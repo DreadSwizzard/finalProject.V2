@@ -14,11 +14,12 @@ public class animcon : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+
         float input_X = Input.GetAxisRaw("Horizontal");
         float input_Y = Input.GetAxisRaw("Vertical");
-        bool iswalking = (Mathf.Abs(input_X) + Mathf.Abs(input_Y) > 0);
-        anim.SetBool("iswalking", iswalking);
-        if (iswalking)
+        bool isWalking = (Mathf.Abs(input_X) + Mathf.Abs(input_Y) > 0);
+        anim.SetBool("isWalking", isWalking);
+        if (isWalking)
         {
             anim.SetFloat("x", input_X);
             anim.SetFloat("y", input_Y);

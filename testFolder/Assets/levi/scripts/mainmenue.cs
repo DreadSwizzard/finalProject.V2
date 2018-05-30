@@ -7,7 +7,7 @@ public class mainmenue : MonoBehaviour {
    
     public void StartGame()
     {
-        SceneManager.LoadScene("scene1");
+        SceneManager.LoadScene("Ryandar Village");
     }
     public void QuitGame()
     {

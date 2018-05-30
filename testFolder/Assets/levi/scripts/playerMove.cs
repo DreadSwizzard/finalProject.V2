@@ -177,7 +177,7 @@ public class playerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        coinText.GetComponent<Text>().text = "coins: " + coinCount;
+       /* coinText.GetComponent<Text>().text = "coins: " + coinCount;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
             speed = speed * sprintmod;
@@ -185,7 +185,7 @@ public class playerMove : MonoBehaviour {
         else if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = speeddef;
-        }
+        } */
         if (mana <= 0)
         {
             magictype = "normal";

@@ -6,8 +6,20 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/levi/start.unity
+    path: Assets/scenes/start.unity
     guid: 44d5b4cd71e18c2429d4609701964fd9
   - enabled: 1
     path: Assets/levi/scene1.unity
     guid: 16346952d28135d4cbf3e112c50a250f
+  - enabled: 1
+    path: Assets/scenes/Fields of Ryandar.unity
+    guid: 4b5c307fc337ba445a5ff99ec1ca4ff7
+  - enabled: 1
+    path: Assets/scenes/Potion Shop Interior.unity
+    guid: eef6ed0886afdbc4895206ae67fcb949
+  - enabled: 1
+    path: Assets/scenes/Ryandar Village.unity
+    guid: 33c8584f76b90184b85dd4d6fe2bfd9e
+  - enabled: 1
+    path: Assets/scenes/The Alter.unity
+    guid: dae7ca1a65ce5824180e44d2ae5a78b8
