@@ -1,36 +1,41 @@
 fileFormatVersion: 2
-guid: 4a24b5c1f988a90468780a9f456bc905
-timeCreated: 1527105923
+guid: abe94deb511074e4081c84413a05253c
+timeCreated: 1527626351
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Sorcerer_0
-    21300002: Sorcerer_1
-    21300004: Sorcerer_2
-    21300006: Sorcerer_3
-    21300008: Sorcerer_4
-    21300010: Sorcerer_5
-    21300012: Sorcerer_6
-    21300014: Sorcerer_7
-    21300016: Sorcerer_8
-    21300018: Sorcerer_9
-    21300020: Sorcerer_10
-    21300022: Sorcerer_11
-    21300024: Sorcerer_12
-    21300026: Sorcerer_13
-    21300028: Sorcerer_14
-    21300030: Sorcerer_15
-    21300032: Sorcerer_16
-    21300034: Sorcerer_17
-    21300036: Sorcerer_18
-    21300038: Sorcerer_19
-    21300040: Sorcerer_20
-    21300042: Sorcerer_21
-    21300044: Sorcerer_22
-    21300046: Sorcerer_23
-    21300048: Sorcerer_24
-    21300050: Sorcerer_25
-    21300052: Sorcerer_26
+    21300000: Sorceress_0
+    21300002: Sorceress_1
+    21300004: Sorceress_2
+    21300006: Sorceress_3
+    21300008: Sorceress_4
+    21300010: Sorceress_5
+    21300012: Sorceress_6
+    21300014: Sorceress_7
+    21300016: Sorceress_8
+    21300018: Sorceress_9
+    21300020: Sorceress_10
+    21300022: Sorceress_11
+    21300024: Sorceress_12
+    21300026: Sorceress_13
+    21300028: Sorceress_14
+    21300030: Sorceress_15
+    21300032: Sorceress_16
+    21300034: Sorceress_17
+    21300036: Sorceress_18
+    21300038: Sorceress_19
+    21300040: Sorceress_20
+    21300042: Sorceress_21
+    21300044: Sorceress_22
+    21300046: Sorceress_23
+    21300048: Sorceress_24
+    21300050: Sorceress_25
+    21300052: Sorceress_26
+    21300054: Sorceress_27
+    21300056: Sorceress_28
+    21300058: Sorceress_29
+    21300060: Sorceress_30
+    21300062: Sorceress_31
   externalObjects: {}
   serializedVersion: 4
   mipmaps:
@@ -108,7 +113,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sorcerer_0
+      name: Sorceress_0
       rect:
         serializedVersion: 2
         x: 0
@@ -122,7 +127,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_1
+      name: Sorceress_1
       rect:
         serializedVersion: 2
         x: 180
@@ -136,7 +141,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_2
+      name: Sorceress_2
       rect:
         serializedVersion: 2
         x: 360
@@ -150,7 +155,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_3
+      name: Sorceress_3
       rect:
         serializedVersion: 2
         x: 540
@@ -164,7 +169,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_4
+      name: Sorceress_4
       rect:
         serializedVersion: 2
         x: 720
@@ -178,7 +183,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_5
+      name: Sorceress_5
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 900
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sorceress_6
       rect:
         serializedVersion: 2
         x: 0
@@ -192,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_6
+      name: Sorceress_7
       rect:
         serializedVersion: 2
         x: 180
@@ -206,7 +225,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_7
+      name: Sorceress_8
       rect:
         serializedVersion: 2
         x: 360
@@ -220,7 +239,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_8
+      name: Sorceress_9
       rect:
         serializedVersion: 2
         x: 540
@@ -234,7 +253,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_9
+      name: Sorceress_10
       rect:
         serializedVersion: 2
         x: 720
@@ -248,7 +267,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_10
+      name: Sorceress_11
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 720
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sorceress_12
       rect:
         serializedVersion: 2
         x: 0
@@ -262,7 +295,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_11
+      name: Sorceress_13
       rect:
         serializedVersion: 2
         x: 180
@@ -276,7 +309,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_12
+      name: Sorceress_14
       rect:
         serializedVersion: 2
         x: 360
@@ -290,7 +323,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_13
+      name: Sorceress_15
       rect:
         serializedVersion: 2
         x: 540
@@ -304,7 +337,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_14
+      name: Sorceress_16
       rect:
         serializedVersion: 2
         x: 720
@@ -318,7 +351,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_15
+      name: Sorceress_17
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 540
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sorceress_18
       rect:
         serializedVersion: 2
         x: 0
@@ -332,7 +379,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_16
+      name: Sorceress_19
       rect:
         serializedVersion: 2
         x: 180
@@ -346,7 +393,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_17
+      name: Sorceress_20
       rect:
         serializedVersion: 2
         x: 360
@@ -360,7 +407,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_18
+      name: Sorceress_21
       rect:
         serializedVersion: 2
         x: 540
@@ -374,7 +421,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_19
+      name: Sorceress_22
       rect:
         serializedVersion: 2
         x: 720
@@ -388,7 +435,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_20
+      name: Sorceress_23
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 360
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sorceress_24
       rect:
         serializedVersion: 2
         x: 0
@@ -402,7 +463,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_21
+      name: Sorceress_25
       rect:
         serializedVersion: 2
         x: 180
@@ -416,7 +477,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_22
+      name: Sorceress_26
       rect:
         serializedVersion: 2
         x: 360
@@ -430,7 +491,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_23
+      name: Sorceress_27
       rect:
         serializedVersion: 2
         x: 540
@@ -444,7 +505,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_24
+      name: Sorceress_28
       rect:
         serializedVersion: 2
         x: 720
@@ -458,7 +519,21 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_25
+      name: Sorceress_29
+      rect:
+        serializedVersion: 2
+        x: 900
+        y: 180
+        width: 180
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Sorceress_30
       rect:
         serializedVersion: 2
         x: 0
@@ -472,7 +547,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Sorcerer_26
+      name: Sorceress_31
       rect:
         serializedVersion: 2
         x: 180

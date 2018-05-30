@@ -10,22 +10,24 @@ public class enemycontroller : MonoBehaviour {
     private Vector2 chaseDirection;
     private bool home = true;
     public Vector3 paceDirection = new Vector3(0f, 0f, 0f);
-    public bool playerInVisible, isUndead, maleexists= false;
+    public bool playerInVisible, isUndead;
     // Use this for initialization
     void Start()
     {
         //get the spawn position so we know how to get home
         startPosition = transform.position;
         timer = shootDelay;
-        if (female = null)
-        {
-            maleexists = true;
-        }
-        if (maleexists == true)
+        if (PlayerPrefs.GetInt("gender") == 1)
         {
             target = male;
+            female = male;
         }
-       
+        
+       else
+        {
+            target = female;
+            male = female;
+        }
     }
 
     // Update is called once per frame
