@@ -18,8 +18,8 @@ public class save : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Save"))
-        {
+        if (Input.anyKeyDown)
+            {
             Save();
             // Debug.Log("saved");
         }
@@ -30,8 +30,7 @@ public class save : MonoBehaviour {
         FileStream file = File.Create(Application.persistentDataPath + "/" + gameObject.name + SceneManager.GetActiveScene().name + "Arcade.dat");
         Save info = new Save();
         //Save myData = new Save();
-        if (Input.anyKeyDown)
-        {
+       
             info.x = transform.position.x;
             info.y = transform.position.y;
             info.z = transform.position.z;
@@ -52,7 +51,7 @@ public class save : MonoBehaviour {
                 PlayerPrefs.SetInt("scenename", 4);
             }
 
-        }
+      
         info.playerProgress = PlayerPrefs.GetInt("Progress");
         bf.Serialize(file, info);
         file.Close();
