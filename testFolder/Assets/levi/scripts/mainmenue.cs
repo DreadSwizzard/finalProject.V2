@@ -5,10 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 public class mainmenue : MonoBehaviour {
    
-    public void StartGame()
-    {
-        SceneManager.LoadScene("Ryandar Village");
-    }
+  
     public void QuitGame()
     {
         Application.Quit();
@@ -18,11 +15,13 @@ public class mainmenue : MonoBehaviour {
         PlayerPrefs.SetInt("gender", 1);
         //set player male
         Debug.Log(PlayerPrefs.GetInt("gender"));
+        SceneManager.LoadScene("Ryandar Village");
     }
     public void pink()
     {
         PlayerPrefs.SetInt("gender", 2);
         //set player female
         Debug.Log(PlayerPrefs.GetInt("gender"));
+        SceneManager.LoadScene("Ryandar Village");
     }
 }

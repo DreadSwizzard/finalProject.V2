@@ -24,15 +24,14 @@ public class playerMove : MonoBehaviour {
         Debug.Log(PlayerPrefs.GetInt("gender"));
         if (PlayerPrefs.GetInt("gender") == 1)
         {
-           
             Instantiate(male, player.transform.position, Quaternion.identity);
             Destroy(gameObject);
-
+            player = male;
         }
-        /*if (PlayerPrefs.GetInt("gender") == 2)
+        if (PlayerPrefs.GetInt("gender") == 2)
         {
             player = female;
-        } */
+        } 
         currentClass = currentcase;
         classIsSwitching = true;
         timer = shootDelay;
