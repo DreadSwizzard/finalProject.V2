@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114992181891277958}
   - component: {fileID: 114717488395812606}
   - component: {fileID: 95586056389632848}
+  - component: {fileID: 114459046420708508}
   m_Layer: 0
   m_Name: male
   m_TagString: Untagged
@@ -184,6 +185,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33fb28423a91a414ca0300f7c93e56e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114459046420708508
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1245304909301182}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d7cb93c652437b4298f2994d3e86e0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114717488395812606
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -208,7 +220,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   male: {fileID: 1245304909301182}
   female: {fileID: 1349615023583308, guid: fda3681b34677804e967067550d06e04, type: 2}
-  player: {fileID: 0}
+  player: {fileID: 1245304909301182}
   invisible: {fileID: 0}
   magicimage: {fileID: 1847470841737134, guid: db5851156f0c0c4418effe9c9c84cf74, type: 2}
   windimage: {fileID: 1471841697853414, guid: fdca7795f24757049878a8e1162788d6, type: 2}

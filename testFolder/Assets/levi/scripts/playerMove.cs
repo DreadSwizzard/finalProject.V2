@@ -21,17 +21,18 @@ public class playerMove : MonoBehaviour {
     public string magictype = "normal";
     void Start()
     {
-        Debug.Log(PlayerPrefs.GetInt("gender"));
+        /*Debug.Log(PlayerPrefs.GetInt("gender"));
         if (PlayerPrefs.GetInt("gender") == 1)
         {
             Instantiate(male, player.transform.position, Quaternion.identity);
             Destroy(gameObject);
-            player = male;
+            PlayerPrefs.SetInt("gender", 0);
+            //player = male;
         }
         if (PlayerPrefs.GetInt("gender") == 2)
         {
             player = female;
-        } 
+        } */
         currentClass = currentcase;
         classIsSwitching = true;
         timer = shootDelay;
