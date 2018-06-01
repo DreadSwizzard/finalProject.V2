@@ -4,8 +4,11 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
 public class enemycontroller : MonoBehaviour {
     public GameObject male, female, target,prefab,spell;
-    public float bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,
-        chaseSpeed = 2.0f, chaseTriggerDistance = 3.0f, paceDistance = 3.0f;
+    public float maxMagicRange = 30, maxFireRange = 20, bulletSpeed = 10f, bulletLifetime = 1.0f, shootDelay = 1.0f,timer=0,
+        chaseSpeed = 2.0f, chaseTriggerDistance = 3.0f, paceDistance = 3.0f,
+        timeBetweenAttacks = 0.5f, attackDamage = 10;
+    GameObject player;                          // Reference to the player GameObject.
+    playerMove playerHealth;
     private Vector3 startPosition;
     private Vector2 chaseDirection;
     private bool home = true;
@@ -15,19 +18,11 @@ public class enemycontroller : MonoBehaviour {
     void Start()
     {
         //get the spawn position so we know how to get home
+        player = GameObject.FindGameObjectWithTag("Player");
+        playerHealth = player.GetComponent<playerMove>();
         startPosition = transform.position;
         timer = shootDelay;
-        if (PlayerPrefs.GetInt("gender") == 1)
-        {
-            target = male;
-            female = male;
-        }
-        
-       else
-        {
-            target = female;
-            male = female;
-        }
+        target = player;
     }
 
     // Update is called once per frame
@@ -39,38 +34,15 @@ public class enemycontroller : MonoBehaviour {
             Vector2 chaseDirection = new Vector2(playerPosition.x - transform.position.x,
                                                playerPosition.y - transform.position.y);
 
-        if (gameObject.name == "archer")
+        if (gameObject.name == "archer" && chaseDirection.magnitude > chaseTriggerDistance && chaseDirection.magnitude < maxFireRange)
         {
-            Debug.Log("shoot");
-            var mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            Vector2 shootDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-            shootDirection.Normalize();
-            Vector3 spawnPosition = transform.position;
-            spawnPosition.x += shootDirection.x * 0.2f;
-            spawnPosition.y += shootDirection.y * 0.2f;
-            GameObject bullet = (GameObject)Instantiate(prefab, spawnPosition, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
-            Destroy(bullet, bulletLifetime);
-            timer = 0;
+           
         }
-        if (gameObject.name == "mage")
+        if (gameObject.name == "mage" && chaseDirection.magnitude > chaseTriggerDistance && chaseDirection.magnitude < maxMagicRange)
         {
-            prefab = spell;
-            Debug.Log("shoot");
-            var mousePosition = Input.mousePosition;
-            mousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
-            Vector2 shootDirection = new Vector2(mousePosition.x - transform.position.x, mousePosition.y - transform.position.y);
-            shootDirection.Normalize();
-            Vector3 spawnPosition = transform.position;
-            spawnPosition.x += shootDirection.x * 0.2f;
-            spawnPosition.y += shootDirection.y * 0.2f;
-            GameObject bullet = (GameObject)Instantiate(prefab, spawnPosition, Quaternion.identity);
-            bullet.GetComponent<Rigidbody2D>().velocity = shootDirection * bulletSpeed;
-            Destroy(bullet, bulletLifetime);
-            timer = 0;
+          
         }
-        if (chaseDirection.magnitude < chaseTriggerDistance)
+       else if (chaseDirection.magnitude < chaseTriggerDistance)
         {
             //player gets too close to the enemy
             home = false;

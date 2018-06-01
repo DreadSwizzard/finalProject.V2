@@ -29,7 +29,7 @@ GameObject:
   - component: {fileID: 114386175259889100}
   m_Layer: 0
   m_Name: female
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -292,6 +292,7 @@ MonoBehaviour:
   currentcase: 0
   coinCount: 0
   currentClass: 0
+  isDead: 0
   spellfail: 0
   bronzekey: 0
   silverkey: 0

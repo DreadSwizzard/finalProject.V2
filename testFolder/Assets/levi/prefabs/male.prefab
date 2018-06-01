@@ -28,7 +28,7 @@ GameObject:
   - component: {fileID: 114459046420708508}
   m_Layer: 0
   m_Name: male
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1245304909301182}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.12989163, y: 0.18280506, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children:
   - {fileID: 4723897789451308}
@@ -147,8 +147,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.5, y: 1}
+  m_Offset: {x: -0.0071397275, y: 0.0047597885}
+  m_Size: {x: 0.4095634, y: 0.8191266}
   m_Direction: 0
 --- !u!81 &81616299451790160
 AudioListener:
@@ -310,6 +310,7 @@ MonoBehaviour:
   currentcase: 0
   coinCount: 0
   currentClass: 0
+  isDead: 0
   spellfail: 0
   bronzekey: 0
   silverkey: 0

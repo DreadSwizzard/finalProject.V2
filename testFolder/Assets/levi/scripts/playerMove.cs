@@ -16,9 +16,10 @@ public class playerMove : MonoBehaviour {
         speed = 5.0f,damage=1.0f, firedamage = 5.0f, waterdamage = 3.0f, lightdamage = 0.5f, winddamage = 2.0f ,earthdammage = 2.0f, 
         icedamage = 2.0f, forrestdamage = 2.0f, magicdamage = 1.5f, undeaddamage = 3.0f, shadowdamage = 3.5f,techdamage = 8.0f;
     public int specialdmg, currentcase, coinCount, currentClass;
-    public bool spellfail, bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
+    public bool isDead, spellfail, bronzekey, silverkey, goldkey, diamondkey, platinumkey, bosskey, firemage, icemage, watermage, windmage,
         forrestmage, earthmage, lightmage, necromancer,magition, shadowmancer, technomancer, magic, classIsSwitching = false;
     public string magictype = "normal";
+   
     void Start()
     {
         /*Debug.Log(PlayerPrefs.GetInt("gender"));
@@ -177,6 +178,10 @@ public class playerMove : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {  
+         if (isDead == true)
+        {
+            Restart();
+        }
        /* coinText.GetComponent<Text>().text = "coins: " + coinCount;
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
@@ -451,5 +456,8 @@ public class playerMove : MonoBehaviour {
             mana += manaregen;
         }
     }
-
+    public void Restart()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 }
